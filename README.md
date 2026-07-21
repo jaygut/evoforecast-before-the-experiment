@@ -6,7 +6,8 @@ built, and reports plainly when a design is not ready.
 
 Successor to `evoforecast-graph-of-life-scrollytelling-20260720T180057Z`. The predecessor is
 preserved unchanged. This version rebuilds the narrative into a twelve-beat decision-maker
-spine, adds a dedicated V4-rejection beat, and fixes a critical offline defect.
+spine, adds a dedicated V4-rejection beat, exposes a complete registered trajectory cell,
+and fixes a critical offline defect.
 
 ## Value proposition
 
@@ -39,13 +40,13 @@ interactive layer was dead on a double-click. That is fixed here and verified in
 ## What is here
 
 - `index.html`, `styles.css`, `config.js`, `main.js`: semantic story, brand system, scroll driver.
-- `scenes/`: twelve p5 instance-mode scene painters (adds `rejection.js` for the V4 beat).
+- `scenes/`: twelve p5 instance-mode scene painters, including V4 rejection and the Study E trajectory explorer.
 - `data/`: deterministic, public, hash-bound lookup JSON, plus `bundle-data.js` (`window.EVO_DATA`).
 - `evidence/`: registered synthetic figures (SVG); no external-facing PDFs are shipped.
 - `technical-note.html` / `technical-note.pdf`: print-friendly three-page companion.
 - `audit/`: claim registry, source hashes, lineage, environment, reviews, V4 disposition, final audit.
 - `qa/`: file-protocol smoke results, interaction results, regenerable screenshots, accessibility evidence, and defect log.
-- `tools/`: deterministic exporter, `build_data_bundle.py`, leak gate, `file_qa.py`, `qa_suite.py`, and `scene_shots.py`.
+- `tools/`: deterministic exporters, `build_data_bundle.py`, leak gate, `file_qa.py`, `qa_suite.py`, and `scene_shots.py`.
 
 ## Verify it
 
@@ -66,10 +67,17 @@ caveats, and links remain in document order, and every canvas is `aria-hidden` a
 
 ## Data sources and limits
 
-The instrument reads the latest blind-v5 synthetic phase and portfolio tables. Blind v3, the
+The instrument reads the latest blind-v5 synthetic phase and portfolio tables and all 32 registered
+`adaptive_E07` trajectories from Study E. Blind v3, the
 corrected favorable and adverse controls, the earlier RC01 synthetic POC, the GT01 PRD, and the
 internal design brief provide chronology and boundaries. Exact hashes and normalized locators
 are in `audit/source_manifest.json`; displayed language is registered in `audit/claim_registry.tsv`.
 The frozen immutable-evidence products are hash-bound upstream and are not shipped in this bundle;
 the `data/*.json` mirrors are their deterministic re-exports and `data/bundle-data.js` is generated
 from those with asserted parity. This is a dated synthetic snapshot.
+
+## Author and contact
+
+Built by **Jay Gutierrez, PhD**, through GraphOfLife, across ecological network science,
+graph intelligence, evolutionary forecasting, nature-finance translation, and structural-risk
+publishing. Contact: `jg@graphoflife.com` · [biome-translator.emergent.host](https://biome-translator.emergent.host)

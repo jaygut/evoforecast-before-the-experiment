@@ -6,6 +6,19 @@ Method: four parallel adversarial reviewers over the rebuilt story bundle
 voice and accessibility). Internal automated reviews are not external human
 acceptance.
 
+## 21 July trajectory and narrative continuation
+
+- Scene 11 now exposes all 32 registered `adaptive_E07` trajectories instead of a
+  proposed genome cutaway. Replicate zero is the default because it is the first
+  manifest row. All paths, daily counts, founder counts, and founder shares come from
+  the frozen Study E source collection recorded as `RC01_TRAJECTORY_CASE`.
+- The prose pass removed mechanical negation, em/en-dashes, semicolons, rhetorical
+  mid-sentence colons, and contrast templates from the rendered story and companions.
+- The contained next step now connects population forecasting to a later targeted
+  resilience intervention. Ecological network dynamics remain a future direction.
+- Real Chrome found one mobile day-zero hotspot under the fixed claim boundary. The
+  plot was moved down and the complete 1280, 1920, and 390 px gate passed afterward.
+
 ## Verdicts
 
 - **Scientific recompute: minor_findings.** Every displayed statistic matches the
@@ -68,18 +81,19 @@ acceptance.
 
 ## De-branding and scene-render pass (owner-directed)
 
-- Removed every external-funder and named-individual reference (agency name, the specific programme
-  figure) from the artifact and its data ledgers. The cost anchor is now a generic illustrative
-  "tens of millions USD," clearly marked not a committed budget. A permanent leak-gate guard
-  fails the build on any reintroduction of those tokens.
+- Removed every external-funder reference and unrelated named-individual reference from the
+  artifact and its data ledgers. The cost anchor is now a generic illustrative "tens of millions
+  USD," clearly marked as illustrative scale. The public identity of Jay Gutierrez, PhD, and the
+  two owner-approved contact routes are the sole named-author exception. The leak gate requires
+  that exact attribution while continuing to reject the retired tokens.
 - Predecessor evidence PDFs (derived from external-facing briefs) were removed; the ask actions now
   point only to the technical note and the audit trail. The two registered SVG figures remain.
 - Scene-by-scene visual review at desktop and mobile: every one of the twelve scenes was corrected to
   render its canvas content in the free band beside the copy-card, with no text, box, or control
   overlapping the card. Painters made free-band-aware: stakes, blindspot, windtunnel, abstain,
-  challenge, rejection, genome, ladder.
-- Named-individual credentials and personal outbound links were removed from the page footer. The
-  footer retains only artifact identity and audit links, while remote runtime resources remain banned.
+  challenge, rejection, trajectory, ladder.
+- The owner-directed continuation restored the project author's identity, bio, email, and Biome
+  Translator link in the footer and both linked companions. Remote runtime resources remain banned.
 
 ## Interactive redesign pass (owner-directed)
 

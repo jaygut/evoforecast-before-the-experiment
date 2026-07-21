@@ -18,6 +18,7 @@ SHOTS.mkdir(parents=True, exist_ok=True)
 phase_payload = json.loads((SITE / "data/phase_cells.json").read_text())
 portfolio_payload = json.loads((SITE / "data/portfolio.json").read_text())
 facts_payload = json.loads((SITE / "data/facts_digest.json").read_text())
+trajectory_payload = json.loads((SITE / "data/trajectory_case.json").read_text())
 v5_rows = phase_payload["cohorts"]["blind_v5"]
 claims = {claim["claim_id"]: claim for claim in facts_payload["claims"]}
 prospective_rows = [row for row in v5_rows if int(row["information_horizon_days"]) < 90]
@@ -43,6 +44,7 @@ BANNED_PHRASES = [
 ]
 # "not X but Y" style negation-correction, and mid-sentence rhetorical colon
 NEG_CORR = re.compile(r"\bnot only\b|\bnot just\b|\bnot [^.,;]{1,40}\bbut\b", re.I)
+MECHANICAL_NEGATION = re.compile(r"\b(?:this|that|it|they) (?:is|are|does|do) not\b|\bdo not\b|\bdoes not\b|\bcannot\b", re.I)
 REMOTE = re.compile(r"^https?://", re.I)
 
 res = {"voice_violations": [], "banned_char_hits": [], "remote_requests": [],
@@ -68,6 +70,15 @@ res = {"voice_violations": [], "banned_char_hits": [], "remote_requests": [],
                and near(indicative_rows[0]["probability_meeting_definition"], 0.525, 1e-9),
            "favorable_control_17_0": "17.0%" in claims["EF-009"]["text"],
            "adverse_control_minus_9_2": "-9.2%" in claims["EF-010"]["text"],
+           "trajectory_all_32_registered": trajectory_payload["summary"]["replicate_count"] == 32
+               and [row["replicate"] for row in trajectory_payload["replicates"]] == list(range(32)),
+           "trajectory_all_32_persist_day90": trajectory_payload["summary"]["present_day90"] == 32
+               and all(row["days"][-1]["daphnia_count"] > 0 for row in trajectory_payload["replicates"]),
+           "trajectory_frozen_initial_state": trajectory_payload["summary"]["initial_daphnia_count"] == 80
+               and trajectory_payload["summary"]["founder_count"] == 8
+               and all(row["days"][0]["daphnia_count"] == 80 for row in trajectory_payload["replicates"]),
+           "trajectory_source_collection_bound": trajectory_payload["provenance"]["source_member_count"] == 32
+               and trajectory_payload["provenance"]["source_collection_sha256"] == "8b32d80a58bb83fb2244c558c783d9e9f1e56803fbdc344072154b2bb6b6d0da",
        },
        "a11y": {}, "screenshots": [], "verdict": "PASS"}
 requests = []
@@ -92,7 +103,7 @@ with sync_playwright() as pw:
     pg.evaluate("document.documentElement.style.scrollBehavior='auto'")
 
     # ---- rendered-text voice lint (visible prose only) ----
-    text = pg.eval_on_selector("main", "el=>el.innerText")
+    text = pg.eval_on_selector("body", "el=>el.innerText")
     for name, ch in BANNED_CHARS.items():
         if ch in text:
             ctx_snip = [ln for ln in text.splitlines() if ch in ln][:3]
@@ -103,6 +114,8 @@ with sync_playwright() as pw:
             res["voice_violations"].append("phrase: " + ph)
     for m in NEG_CORR.finditer(text):
         res["voice_violations"].append("neg-correction: " + m.group(0)[:60])
+    for m in MECHANICAL_NEGATION.finditer(text):
+        res["voice_violations"].append("mechanical negation: " + m.group(0)[:60])
     # semicolons in visible prose (evidence/eyebrow proof lines use middot, not ;)
     if ";" in text:
         res["voice_violations"].append("semicolon in visible prose")

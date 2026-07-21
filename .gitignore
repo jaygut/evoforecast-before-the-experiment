@@ -1,6 +1,8 @@
-# Visual-QA captures (regenerable, heavy) — not needed for the published page
+# Visual-QA captures are regenerable and excluded from the published page
 qa/scenes/
 qa/screenshots/
+qa/companions/
+pkcs11.txt
 # Python / OS cruft
 **/__pycache__/
 *.pyc

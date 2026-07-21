@@ -24,7 +24,7 @@ REPORT = SITE / "qa" / "scene_interaction_results.json"
 OUT.mkdir(parents=True, exist_ok=True)
 SCENES = [
     "hero", "stakes", "blindspot", "windtunnel", "abstain", "rejection",
-    "challenge", "phase", "frontier", "ladder", "genome", "ask",
+    "challenge", "phase", "frontier", "ladder", "trajectory", "ask",
 ]
 VIEWPORTS = [
     (1280, 900, "desk1280"),
@@ -213,17 +213,18 @@ def targets_for(page, scene_id, width, height, band):
         return [(x0 + i * 26 + (max_width - i * 6) / 2,
                  top + (3 - i) * (row_h + gap) + row_h / 2) for i in range(4)]
 
-    if scene_id == "genome":
-        figure_x = band["right"] + 40 if width > 800 else 30
-        figure_right = width - 44
-        figure_width = max(220, figure_right - figure_x)
-        figure_width = min(1000, figure_width)
-        column_gap = min(66, figure_width * 0.10)
-        chromosome_width = (figure_width - column_gap) * 0.44
-        layer_x = figure_x + chromosome_width + column_gap
-        layer_width = figure_width - chromosome_width - column_gap
-        top, step, layer_h = (140, 42, 34) if compact else (140, 54, 42)
-        return [(layer_x + layer_width / 2, top + i * step + layer_h / 2) for i in range(5)]
+    if scene_id == "trajectory":
+        left = 28 if width < 680 else 46
+        right = width - 28 if width < 680 else (band["left"] - 34 if band["left"] > 520 else width * 0.55)
+        top = 136 if width < 680 else 128
+        bottom = height - 190 if width < 680 else min(height - 190, top + 330)
+        rows = page.evaluate("window.EVO_DATA.trajectory.replicates[0].days")
+        points = []
+        for day in (0, 14, 30, 60, 90):
+            count = rows[day]["daphnia_count"]
+            points.append((left + (right - left) * day / 90,
+                           bottom - (bottom - top) * count / 80))
+        return points
 
     if scene_id == "ask":
         if width > 800:
@@ -317,6 +318,27 @@ def exercise_controls(page):
     frontier_ok = frontier_ok and len(readouts) == len(values)
     checks["frontier_controls"] = frontier_ok
     checks["frontier_control_cases"] = frontier_cases
+
+    trajectory_ok = True
+    trajectory_cases = 0
+    for selector in ("#trajectory-replicate", "#trajectory-day"):
+        slider = page.locator(selector)
+        low = int(slider.get_attribute("min"))
+        high = int(slider.get_attribute("max"))
+        values = range(low, high + 1)
+        readouts = set()
+        for value in values:
+            page.eval_on_selector(
+                selector,
+                "(el,value)=>{el.value=String(value);el.dispatchEvent(new Event('input',{bubbles:true}))}",
+                value,
+            )
+            page.wait_for_timeout(8)
+            readouts.add(page.locator("#trajectory-readout").inner_text())
+            trajectory_cases += 1
+        trajectory_ok = trajectory_ok and len(readouts) == high - low + 1
+    checks["trajectory_controls"] = trajectory_ok
+    checks["trajectory_control_cases"] = trajectory_cases
     return checks
 
 
@@ -377,6 +399,10 @@ def run_viewport(browser, width, height, tag):
             page.wait_for_timeout(100)
             if canvas.evaluate(CANVAS_HASH) == baseline:
                 raise AssertionError(tag + "/" + scene_id + ": click did not remain pinned at hotspot " + str(target_index))
+            if scene_id == "trajectory":
+                expected_day = (0, 14, 30, 60, 90)[target_index]
+                if "day " + str(expected_day) not in page.locator("#trajectory-readout").inner_text():
+                    raise AssertionError(tag + "/trajectory: canvas click did not synchronize the semantic readout")
             tested.append([round(local_x, 1), round(local_y, 1)])
 
         screenshot = OUT / (tag + "_" + scene_id + ".png")
@@ -392,7 +418,7 @@ def run_viewport(browser, width, height, tag):
         }
 
     controls = exercise_controls(page)
-    if not all(controls[key] for key in ("challenge_buttons", "phase_controls", "frontier_controls")):
+    if not all(controls[key] for key in ("challenge_buttons", "phase_controls", "frontier_controls", "trajectory_controls")):
         raise AssertionError(tag + ": one or more DOM controls failed: " + repr(controls))
     if errors["console"] or errors["page"]:
         raise AssertionError(tag + ": browser errors: " + repr(errors))

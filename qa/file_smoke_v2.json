@@ -5,10 +5,12 @@
   "evo_data_present": true,
   "canvas_count": 12,
   "section_count": 12,
-  "load_status": "Evidence loaded from the embedded bundle \u00b7 17 registered claims \u00b7 lookup only",
+  "load_status": "Evidence loaded from the embedded bundle \u00b7 18 registered claims \u00b7 lookup only",
   "html_class": "js",
   "phase_before": "BLIND V5 \u00b7 GENOME + PHENOME \u00b7 16 populations \u00b7 day 60 \u00b7 single-cell lookup \u00b7 combined-test probability 21.6% \u00b7 accuracy gain 17.1% \u00b7 coverage 79.9%",
   "phase_after_P1": "BLIND V5 \u00b7 PEDIGREE \u00b7 16 populations \u00b7 day 60 \u00b7 single-cell lookup \u00b7 combined-test probability 6.6% \u00b7 accuracy gain 9.2% \u00b7 coverage 71.7%",
   "challenge_after_adverse": "Adverse control \u00b7 -9.2% \u00b7 Matched control with the signal removed",
+  "trajectory_before": "Vessel 01 \u00b7 day 45 \u00b7 49 grazers \u00b7 dominant founder D04 at 32.7%",
+  "trajectory_after_day90": "Vessel 01 \u00b7 day 90 \u00b7 30 grazers \u00b7 dominant founder D04 at 43.3%",
   "verdict": "PASS"
 }

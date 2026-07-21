@@ -5,11 +5,12 @@
   var active = {};
   var rafPending = false;
   var reduced = root.matchMedia && root.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var data = { phase: null, portfolio: null, timeline: null, genome: null, facts: null };
+  var data = { phase: null, portfolio: null, timeline: null, trajectory: null, facts: null };
   var state = {
     phaseRows: [], phaseSelected: { cohort: "blind_v5", model: "GP1", arms: 16, horizon: 60 },
     portfolioRows: [], portfolioSelected: { package: "genome_plus_phenome", horizon: 60 },
-    timeline: null, genome: null, facts: null, phaseThresholds: null, challengeMode: "blind", freeBands: {}
+    timeline: null, trajectory: null, trajectorySelected: { replicate: 0, day: 45 }, facts: null,
+    phaseThresholds: null, challengeMode: "blind", freeBands: {}
   };
 
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
@@ -54,14 +55,14 @@
   // fetch() is only an online fallback when the bundle is absent.
   function loadData() {
     var d = root.EVO_DATA;
-    if (d && d.phase && d.portfolio && d.timeline && d.genome && d.facts) {
+    if (d && d.phase && d.portfolio && d.timeline && d.trajectory && d.facts) {
       state.dataSource = "embedded bundle";
-      return Promise.resolve([d.phase, d.portfolio, d.timeline, d.genome, d.facts]);
+      return Promise.resolve([d.phase, d.portfolio, d.timeline, d.trajectory, d.facts]);
     }
     state.dataSource = "fetched mirror";
     return Promise.all([
       loadJSON("data/phase_cells.json"), loadJSON("data/portfolio.json"), loadJSON("data/challenge_timeline.json"),
-      loadJSON("data/genome_cutaway.json"), loadJSON("data/facts_digest.json")
+      loadJSON("data/trajectory_case.json"), loadJSON("data/facts_digest.json")
     ]);
   }
 
@@ -168,6 +169,36 @@
     setStatus("Portfolio filter updated. Display remains a preregistered lookup.");
   }
 
+  function trajectoryRow() {
+    var rep = data.trajectory.replicates[state.trajectorySelected.replicate];
+    return rep && rep.days[state.trajectorySelected.day];
+  }
+
+  function updateTrajectory() {
+    var row = trajectoryRow();
+    if (!row) { return; }
+    var vessel = String(state.trajectorySelected.replicate + 1).padStart(2, "0");
+    var dominant = (row.dominant_percent_tenths / 10).toFixed(1);
+    text("trajectory-readout", "Vessel " + vessel + " · day " + row.day + " · " + row.daphnia_count + " grazers · dominant founder " + row.dominant_founder + " at " + dominant + "%");
+    if (instances.trajectory) { instances.trajectory.setState(state); }
+    setStatus("Registered trajectory selected. Every value is a frozen Study E lookup.");
+  }
+
+  state.selectTrajectoryFromCanvas = function (replicate, day) {
+    if (state.trajectorySelected.replicate === replicate && state.trajectorySelected.day === day) { return; }
+    state.trajectorySelected.replicate = clamp(replicate, 0, 31);
+    state.trajectorySelected.day = clamp(day, 0, 90);
+    var replicateControl = byId("trajectory-replicate"), dayControl = byId("trajectory-day");
+    var vessel = String(state.trajectorySelected.replicate + 1).padStart(2, "0");
+    replicateControl.value = state.trajectorySelected.replicate;
+    dayControl.value = state.trajectorySelected.day;
+    text("trajectory-replicate-value", vessel);
+    text("trajectory-day-value", state.trajectorySelected.day);
+    replicateControl.setAttribute("aria-valuetext", "vessel " + (state.trajectorySelected.replicate + 1));
+    dayControl.setAttribute("aria-valuetext", "day " + state.trajectorySelected.day);
+    updateTrajectory();
+  };
+
   function installControls() {
     var arms = [8,16,24,48,96], horizons = [14,30,60,90];
     byId("phase-cohort").addEventListener("change", function (e) { state.phaseSelected.cohort = e.target.value; updatePhase(); });
@@ -176,6 +207,8 @@
     byId("phase-horizon").addEventListener("input", function (e) { state.phaseSelected.horizon = horizons[parseInt(e.target.value,10)]; text("phase-horizon-value", state.phaseSelected.horizon); e.target.setAttribute("aria-valuetext", "day " + state.phaseSelected.horizon); updatePhase(); });
     byId("frontier-package").addEventListener("change", function (e) { state.portfolioSelected.package = e.target.value; updateFrontier(); });
     byId("frontier-horizon").addEventListener("input", function (e) { state.portfolioSelected.horizon = horizons[parseInt(e.target.value,10)]; text("frontier-horizon-value", state.portfolioSelected.horizon); e.target.setAttribute("aria-valuetext", "day " + state.portfolioSelected.horizon); updateFrontier(); });
+    byId("trajectory-replicate").addEventListener("input", function (e) { if (instances.trajectory) { instances.trajectory.clearPointerSelection(); } state.trajectorySelected.replicate = clamp(parseInt(e.target.value, 10), 0, 31); var vessel = String(state.trajectorySelected.replicate + 1).padStart(2, "0"); text("trajectory-replicate-value", vessel); e.target.setAttribute("aria-valuetext", "vessel " + (state.trajectorySelected.replicate + 1)); updateTrajectory(); });
+    byId("trajectory-day").addEventListener("input", function (e) { if (instances.trajectory) { instances.trajectory.clearPointerSelection(); } state.trajectorySelected.day = clamp(parseInt(e.target.value, 10), 0, 90); text("trajectory-day-value", state.trajectorySelected.day); e.target.setAttribute("aria-valuetext", "day " + state.trajectorySelected.day); updateTrajectory(); });
     doc.querySelectorAll("[data-challenge-mode]").forEach(function (button) {
       button.addEventListener("click", function () {
         state.challengeMode = button.getAttribute("data-challenge-mode");
@@ -204,8 +237,8 @@
     doc.documentElement.classList.add("js");
     hydrateCopy();
     loadData().then(function (values) {
-      data.phase=values[0]; data.portfolio=values[1]; data.timeline=values[2]; data.genome=values[3]; data.facts=values[4];
-      state.timeline=data.timeline; state.genome=data.genome; state.facts=data.facts; state.phaseThresholds=data.phase.thresholds; updatePhase(); updateFrontier(); updateChallengeReadout();
+      data.phase=values[0]; data.portfolio=values[1]; data.timeline=values[2]; data.trajectory=values[3]; data.facts=values[4];
+      state.timeline=data.timeline; state.trajectory=data.trajectory; state.facts=data.facts; state.phaseThresholds=data.phase.thresholds; updatePhase(); updateFrontier(); updateTrajectory(); updateChallengeReadout();
       installControls(); installObservers(); installKeyboard(); requestUpdate();
       measureFreeBands();
       if (doc.fonts && doc.fonts.ready) { doc.fonts.ready.then(function () { measureFreeBands(); requestUpdate(); }); }

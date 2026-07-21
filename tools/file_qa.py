@@ -33,7 +33,7 @@ with sync_playwright() as pw:
         pg.wait_for_timeout(70)
     pg.evaluate("window.scrollTo(0,0)")
     pg.wait_for_timeout(200)
-    res["evo_data_present"] = pg.evaluate("!!(window.EVO_DATA && window.EVO_DATA.facts && window.EVO_DATA.phase)")
+    res["evo_data_present"] = pg.evaluate("!!(window.EVO_DATA && window.EVO_DATA.facts && window.EVO_DATA.phase && window.EVO_DATA.trajectory)")
     res["canvas_count"] = pg.eval_on_selector_all("canvas", "els=>els.length")
     res["section_count"] = pg.eval_on_selector_all("section.story-scene", "els=>els.length")
     res["load_status"] = pg.eval_on_selector("#load-status", "el=>el.textContent")
@@ -47,13 +47,18 @@ with sync_playwright() as pw:
     pg.eval_on_selector("[data-challenge-mode='adverse']", "el=>el.click()")
     pg.wait_for_timeout(120)
     res["challenge_after_adverse"] = pg.eval_on_selector("#challenge-readout", "el=>el.textContent")
+    res["trajectory_before"] = pg.eval_on_selector("#trajectory-readout", "el=>el.textContent")
+    pg.eval_on_selector("#trajectory-day", "el=>{el.value='90';el.dispatchEvent(new Event('input',{bubbles:true}))}")
+    pg.wait_for_timeout(120)
+    res["trajectory_after_day90"] = pg.eval_on_selector("#trajectory-readout", "el=>el.textContent")
     b.close()
 
 res["verdict"] = (
     "PASS" if (res["evo_data_present"] and res["canvas_count"] == 12
                and res["section_count"] == 12 and not res["console_errors"]
                and not res["page_errors"]
-               and res["phase_after_P1"] != res["phase_before"]) else "FAIL"
+               and res["phase_after_P1"] != res["phase_before"]
+               and res["trajectory_after_day90"] != res["trajectory_before"]) else "FAIL"
 )
 print(json.dumps(res, indent=2))
 Path(args.report).write_text(json.dumps(res, indent=2) + "\n", encoding="utf-8")

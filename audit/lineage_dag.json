@@ -81,6 +81,11 @@
       "to": "facts_digest"
     },
     {
+      "from": "RC01_TRAJECTORY_CASE",
+      "operation": "exact-row projection",
+      "to": "trajectory_case"
+    },
+    {
       "from": "RC01_SUMMARY",
       "operation": "verified extraction",
       "to": "facts_digest"
@@ -122,6 +127,11 @@
     },
     {
       "from": "portfolio",
+      "operation": "lookup-only rendering",
+      "to": "site"
+    },
+    {
+      "from": "trajectory_case",
       "operation": "lookup-only rendering",
       "to": "site"
     }
@@ -208,6 +218,11 @@
       "sha256": "b3a802732781edd112133164238774ac033571acf199a9d2b4e6406e1206dc2f"
     },
     {
+      "id": "RC01_TRAJECTORY_CASE",
+      "kind": "immutable_source_collection",
+      "sha256": "8b32d80a58bb83fb2244c558c783d9e9f1e56803fbdc344072154b2bb6b6d0da"
+    },
+    {
       "id": "RC01_SUMMARY",
       "kind": "immutable_source",
       "sha256": "4036a740b9c049c0dad33977b3593ea2a96184f827798fae7e34e48b402ea72e"
@@ -228,6 +243,11 @@
     {
       "id": "portfolio",
       "kind": "derived_public_data"
+    },
+    {
+      "id": "trajectory_case",
+      "kind": "derived_public_data",
+      "sha256": "42a1039a40b9f32151ffd413c287b122b6fc270ef8cd21107d2bbb6dbf2b493a"
     },
     {
       "id": "site",

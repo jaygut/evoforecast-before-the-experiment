@@ -119,7 +119,7 @@ def main() -> int:
                 command.extend(["--wind-tunnel-brief", str(args.wind_tunnel_brief)])
             subprocess.run(command, check=True, capture_output=True, text=True)
             outputs.append(target)
-        compare = ["data/facts_digest.json", "data/phase_cells.json", "data/portfolio.json", "data/challenge_timeline.json", "data/genome_cutaway.json", "audit/facts_digest.json", "audit/source_manifest.json", "audit/lineage_dag.json", "audit/claim_registry.tsv", "audit/environment.json"]
+        compare = ["data/facts_digest.json", "data/phase_cells.json", "data/portfolio.json", "data/challenge_timeline.json", "data/trajectory_case.json", "audit/facts_digest.json", "audit/source_manifest.json", "audit/lineage_dag.json", "audit/claim_registry.tsv", "audit/environment.json"]
         for relative in compare:
             if sha(outputs[0] / relative) != sha(outputs[1] / relative):
                 failures.append("non-deterministic export: " + relative)

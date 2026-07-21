@@ -19,7 +19,7 @@ KEYS = {
     "phase": "phase_cells.json",
     "portfolio": "portfolio.json",
     "timeline": "challenge_timeline.json",
-    "genome": "genome_cutaway.json",
+    "trajectory": "trajectory_case.json",
     "facts": "facts_digest.json",
 }
 

@@ -1,6 +1,6 @@
 # EvoForecast scrollytelling strategy (successor v2)
 
-Snapshot: 20 July 2026
+Snapshot: 21 July 2026
 Audience: a research director or funder sizing a large predict-evolution programme, plus the
 scientists and reviewers who would vet it.
 Claim boundary: synthetic software and experimental-design evidence only. Not empirical Daphnia
@@ -21,8 +21,8 @@ qualification, external endorsement, funding, or intervention efficacy.
 | 8 | phase | Build a design and read what the frozen challenge already found. | EF-003, EF-004, EF-005 (80 cells) | Where does a design cross from signal to evidence? |
 | 9 | frontier | More measurement helps only when it changes the answer. | EF-006 (0/120), EF-008 (feedback +0.0%) | What measurement buys identifiability rather than expense? |
 | 10 | ladder | The software is proven here, while the biology still needs a real test. | EF-002, EF-011, EF-015, EF-017 | Which rung is truly supported, and what would move the next one? |
-| 11 | genome | The hard part a real study still has to prove. | EF-012 (proposed/blocked), EF-015 | Which structural assumptions still need real material and assays? |
-| 12 | ask | Run one small, staged, keystone-centered round together before anyone scales. | EF-001, EF-015 | What must the physical programme measure before it scales? |
+| 11 | trajectory | Identical starts can become different evolutionary histories. | EF-018 (all 32 registered adaptive_E07 trajectories) | Which population and founder histories would a real programme need to predict? |
+| 12 | ask | Run one small, contained, keystone-centered round together before anyone scales. | EF-001, EF-015 | What must the physical programme measure before it scales? |
 
 ## Load-bearing decisions
 
@@ -44,8 +44,8 @@ qualification, external endorsement, funding, or intervention efficacy.
 6. **Lookup, never live inference.** The instruments read hash-bound cells. Controls are labelled Build
    the experiment and Explore measurement plans, and the browser contains no fitting, scoring, or
    simulation path.
-7. **One biological boundary.** The site does not modify RC01 or implement GT01. The ten-chromosome
-   cutaway is explicitly proposed and blocked and paired with the clonal RC01 boundary. SLiM 5.2
+7. **One biological boundary.** The site does not modify RC01 or implement GT01. The trajectory scene
+   reads every frozen row from one registered clonal RC01 Study E cell. SLiM 5.2
    is the registered trajectory engine for this round. The harness is engine-agnostic, other
    evolutionary simulators are under evaluation, and ecological network dynamics in a population
    context remain a direction for later rounds.
@@ -55,6 +55,9 @@ qualification, external endorsement, funding, or intervention efficacy.
    twelve beats.
 9. **Voice.** Scientist and product builder. No em-dash, no semicolon in public prose, no rhetorical
    mid-sentence colon, no "not X but Y", no grant or governance register, no stock LLM phrasing.
+10. **Registered trajectory, never a showcase pick.** Scene 11 includes all 32 passed `adaptive_E07`
+    replicates in manifest order. The default is replicate zero because it is the first registered row.
+    Hover and click select exact daily population and founder-composition lookups.
 
 ## Stop conditions preserved
 

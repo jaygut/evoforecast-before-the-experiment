@@ -123,6 +123,14 @@
       "source_id": "RC01_JOBS"
     },
     {
+      "basename": "32 adaptive_E07 latent_state.csv members",
+      "bytes": 4229482,
+      "locator": "immutable-evidence://rc01/runs/raw/adaptive_E07/latent_state.csv",
+      "mutable": false,
+      "sha256": "8b32d80a58bb83fb2244c558c783d9e9f1e56803fbdc344072154b2bb6b6d0da",
+      "source_id": "RC01_TRAJECTORY_CASE"
+    },
+    {
       "basename": "derived_results_summary.json",
       "bytes": 2364,
       "locator": "immutable-evidence://rc01/derived/derived_results_summary.json",

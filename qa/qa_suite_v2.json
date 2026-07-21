@@ -17,7 +17,11 @@
     "plans_0_of_120": true,
     "sole_indicative_is_day90_52_5": true,
     "favorable_control_17_0": true,
-    "adverse_control_minus_9_2": true
+    "adverse_control_minus_9_2": true,
+    "trajectory_all_32_registered": true,
+    "trajectory_all_32_persist_day90": true,
+    "trajectory_frozen_initial_state": true,
+    "trajectory_source_collection_bound": true
   },
   "a11y": {
     "h1_count": 1,
@@ -26,6 +30,7 @@
     "canvases_aria_hidden": true,
     "headings_order": [
       "H1",
+      "H2",
       "H2",
       "H2",
       "H2",

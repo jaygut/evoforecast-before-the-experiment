@@ -1,5 +1,5 @@
 {
-  "claim_boundary": "Synthetic software and experimental-design evidence only; no empirical Daphnia forecast skill, GT01/G1 qualification, or external endorsement.",
+  "claim_boundary": "This digest contains synthetic software and experimental-design evidence. Empirical Daphnia forecast skill, GT01/G1 qualification, and external endorsement remain outside its scope.",
   "claims": [
     {
       "allowed_wording": "synthetic design instrument",
@@ -80,8 +80,8 @@
       "snapshot_date": "2026-07-20",
       "source_id": "BLIND_V5_FRONTIER",
       "status": "indicative",
-      "text": "No blind-v5 policy was classified robustly Pareto optimal: 0/120.",
-      "uncertainty_or_missingness": "Some policies are conditional/fragile; none satisfy the robust classification.",
+      "text": "Zero of 120 blind-v5 policies were classified robustly Pareto optimal.",
+      "uncertainty_or_missingness": "Some policies are conditional or fragile. Zero satisfy the robust classification.",
       "units": "policy cells",
       "verification_status": "computationally verified from hash-bound source"
     },
@@ -123,7 +123,7 @@
       "source_id": "POSITIVE_CONTROL",
       "status": "synthetic",
       "text": "The corrected favorable control shows a 17.0% genome-versus-pedigree CRPS gain.",
-      "uncertainty_or_missingness": "Favourable marker-encoded synthetic software control only; not DNA value in biology.",
+      "uncertainty_or_missingness": "This favorable marker-encoded control establishes software behavior. The value of DNA in biology awaits measurement.",
       "units": "percent",
       "verification_status": "computationally verified from hash-bound source"
     },
@@ -151,7 +151,7 @@
       "source_id": "RC01_SUMMARY",
       "status": "synthetic",
       "text": "The earlier RC01 synthetic POC verified 3,076 immutable jobs.",
-      "uncertainty_or_missingness": "Execution count is software evidence; biological validation remains blocked.",
+      "uncertainty_or_missingness": "Execution count is software evidence. Biological validation remains blocked.",
       "units": "jobs",
       "verification_status": "computationally verified from hash-bound source"
     },
@@ -178,7 +178,7 @@
       "snapshot_date": "2026-07-20",
       "source_id": "GT01_PRD",
       "status": "synthetic",
-      "text": "SLiM 5.2 is the registered biological trajectory engine for this round; Python orchestrates, exports, and scores.",
+      "text": "SLiM 5.2 is the registered biological trajectory engine for this round. Python orchestrates, exports, and scores.",
       "uncertainty_or_missingness": "This site performs lookup only and contains no simulator.",
       "units": "engine boundary",
       "verification_status": "computationally verified from hash-bound source"
@@ -220,7 +220,7 @@
       "snapshot_date": "2026-07-20",
       "source_id": "PROMPT",
       "status": "synthetic",
-      "text": "V3–V5 describe software and challenge-design maturation, not biological generations.",
+      "text": "V3 through V5 are software and challenge-design maturation snapshots. Biological generations are a separate concept.",
       "uncertainty_or_missingness": "Cohorts differ in registered synthetic design and scoring treatment.",
       "units": "chronology",
       "verification_status": "computationally verified from hash-bound source"
@@ -237,6 +237,20 @@
       "text": "The earlier RC01 synthetic POC verified 12,304 run-horizon endpoint records.",
       "uncertainty_or_missingness": "Records are synthetic endpoints at four registered horizons.",
       "units": "endpoint records",
+      "verification_status": "computationally verified from hash-bound source"
+    },
+    {
+      "allowed_wording": "registered synthetic persistence-cell trajectories",
+      "claim_id": "EF-018",
+      "denominator": "32",
+      "forbidden_wording": "empirical persistence or transfer",
+      "owner": "EvoForecast computational evidence owner",
+      "snapshot_date": "2026-07-21",
+      "source_id": "RC01_TRAJECTORY_CASE",
+      "status": "synthetic",
+      "text": "In registered Study E cell adaptive_E07, all 32 synthetic vessels retained Daphnia through day 90 while standing selection changed the shares of eight immutable founders.",
+      "uncertainty_or_missingness": "Its scope is one registered synthetic persistence diagnostic. Empirical persistence and transfer await testing.",
+      "units": "replicate vessels",
       "verification_status": "computationally verified from hash-bound source"
     }
   ],
@@ -263,6 +277,7 @@
     "real Daphnia forecast",
     "world first",
     "biologically validated"
+    ,"empirical persistence or transfer"
   ],
   "schema_version": "evoforecast-scrolly-facts.local-v1",
   "snapshot_date": "2026-07-20"
