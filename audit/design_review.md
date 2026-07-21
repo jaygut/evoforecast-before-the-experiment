@@ -4,11 +4,11 @@ Review date: 20 July 2026
 
 ## Access record
 
-All five named URLs returned HTTP 200 during live Playwright capture. The three public reference sites yielded complete readable pages and full-page screenshots. Both Notion URLs yielded only a 424-character unauthenticated application shell; their content was therefore **not** treated as live-reviewed. The Notion connector independently returned `object_not_found` because the pages were not shared with that integration.
+The three public reference sites returned HTTP 200 and yielded readable pages during the build review. The two private-workspace URLs did not yield reviewable content before timeout, so their content was **not** treated as reviewed.
 
-The canonical Graph of Life Brand & Visual System was reviewed from the verified local snapshot `brand_visual_system_snapshot.md` (SHA-256 `4f7ed8f3af048ae0ac620a0535c9b4a887111f6140deefa9da6767240ccac2e3`). The paired voice snapshot was `writing_style_guide_snapshot.md` (SHA-256 `1b067c7f4dd176559371adb2782c622eace2ab0cf25d1dfbca690ae5fee319c4`). The storytelling system was implemented from the binding execution prompt plus the live reference-site mechanics; no inaccessible Notion content is represented as reviewed.
+The canonical Graph of Life Brand & Visual System was reviewed from the verified local snapshot `brand_visual_system_snapshot.md` (SHA-256 `4f7ed8f3af048ae0ac620a0535c9b4a887111f6140deefa9da6767240ccac2e3`). The paired voice snapshot was `writing_style_guide_snapshot.md` (SHA-256 `1b067c7f4dd176559371adb2782c622eace2ab0cf25d1dfbca690ae5fee319c4`). The storytelling system was implemented from the binding execution prompt plus the public reference-site mechanics. No inaccessible private-workspace content is represented as reviewed.
 
-Live capture hashes, titles, body lengths, and screenshots are in `reference_captures/manifest.json`.
+Raw page text and screenshots are intentionally omitted from this published artifact. Those captures can reproduce named-individual references from unrelated page footers, which conflicts with the public boundary. The verified local brand and voice snapshot hashes above remain the controlling design evidence.
 
 ## Rules applied
 

@@ -2,7 +2,7 @@
 
 Review type: internal visual/narrative pass; not an external design endorsement  
 Review date: 20 July 2026  
-Evidence: desktop, mobile, reduced-motion, no-JavaScript screenshots; live reference captures; browser result JSON; three rendered note pages.
+Evidence: desktop, mobile, reduced-motion, no-JavaScript screenshots; browser result JSON; three rendered note pages; hash-bound local brand and voice snapshots.
 
 ## Review questions
 
@@ -20,7 +20,7 @@ Evidence: desktop, mobile, reduced-motion, no-JavaScript screenshots; live refer
 |---|---|---|---|
 | VIS-01 | High | The initial portfolio control used invented package labels that did not match the registered table. | Fixed before release. Options now use the six exact `measurement_package` keys and human-readable config labels. |
 | VIS-02 | Medium | The first technical-note render produced six pages because exact-height pages also forced page breaks. | Fixed. The final PDF is exactly three A4 pages; content was tightened and the second-page footer moved inside the safe band. |
-| VIS-03 | Low | The initial ask panel had no inline caveat even though every other chapter did. | Fixed. All eleven scenes now have provenance, source pill, and inline caveat. |
+| VIS-03 | Low | The initial ask panel had no inline caveat even though every other chapter did. | Fixed. All twelve scenes now have provenance, source pill, and inline caveat. |
 | VIS-04 | Informational | Stitched full-page screenshots contain blank vertical runway because sticky scrollytelling stages are captured at one scroll state. | Accepted. Viewport interaction is controlling; the blank runway is intentional scene duration, not missing content. |
 | VIS-05 | Low | The successful-load status pill remained visible and could overlap lower mobile copy. | Fixed. The live region remains in the DOM and visually fades after successful load. |
 
@@ -28,12 +28,12 @@ Evidence: desktop, mobile, reduced-motion, no-JavaScript screenshots; live refer
 
 - No console errors or runtime remote requests.
 - Zero horizontal overflow at 1440×900 and 390×844.
-- Eleven canvases construct in both sizes; every essential claim remains in the DOM.
+- Twelve canvases construct in both sizes; every essential claim remains in the DOM.
 - Native controls update live regions with registered readouts.
 - DOM-measured card bands are recomputed after font settlement and resize; phase, frontier, chronology, and genome labels stay outside the occupied copy region.
 - Exact local IBM Plex fonts report loaded.
 - Reduced-motion chapters resolve to finite static stages with automatic scroll behavior.
-- No-JavaScript mode exposes eleven scene titles, eleven source pills, the fixed claim boundary, and an explicit fallback summary.
+- No-JavaScript mode exposes twelve scene titles, twelve source pills, the fixed claim boundary, and an explicit fallback summary.
 - The final sentence is quiet, claim-bounded, and exact.
 
 ## Conclusion

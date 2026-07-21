@@ -17,8 +17,8 @@ acceptance.
   claim-boundary breach found.
 - **Adversarial communication: minor_findings, no must-fix.** Read as a research
   director and a skeptical geneticist, the story survives. The claim boundary is
-  airtight and repeated where it matters. The value proposition is judged
-  compelling and credible for a nine-figure scale-or-not decision.
+  explicit and repeated where it matters. The value proposition is judged
+  credible for a consequential scale-or-redesign decision.
 - **Fresh-reader comprehension: minor_findings.** The five-second and sixty-second
   tests both land the intended message. The first-250-words rule passes (no model
   acronym; problem, decision-maker, cost, and role all stated). Findings were
@@ -34,17 +34,19 @@ acceptance.
 - Phase readout now prints the plain track label (for example "Genome + phenome")
   instead of the internal acronym, shows coverage to one decimal so it no longer
   visually collides with the 80% ladder headline, and is labelled "single-cell lookup".
-- Frontier readout leads with the classification and appends "none robustly best" so a
-  high Pareto-membership figure cannot travel alone.
+- Frontier readout names the selected package and horizon, states that it is showing
+  exact frozen rows across registered population counts, and carries the registered
+  0-of-120 robust classification without selecting a browser-derived best row.
 - Static index.html frontier proof synced to the config value (feedback +0.0% beyond
   genome plus phenome), removing JS-on vs no-JS drift.
-- Plain-language glosses added: the combined test and the 50% coin-toss meaning are
-  defined in the V5 scene; "one cell is one design at one forecast horizon" is defined;
-  "prospective" removed from the hero; the V3/V4/V5 version scheme is introduced;
-  "regret" replaced with "expected loss"; "proper score" replaced with "forecast
-  accuracy"; "nowcast" dropped; "mesocosms" replaced with "small controlled model
-  ecosystems"; the closing network is subordinated to an explicit later stage around one
-  keystone organism.
+- Plain-language glosses added: the combined test and its 50 percent indicative
+  threshold are defined in the V5 scene as a stored probability of meeting the joint
+  definition; one cell is defined as one information track, population count, and
+  horizon; prospective and nowcast are both defined; the V3/V4/V5 version scheme is
+  introduced; regret is replaced with expected loss; proper score is replaced with
+  forecast accuracy; mesocosms is replaced with small controlled model ecosystems;
+  the closing network is subordinated to an explicit later stage around one keystone
+  organism.
 - All external-funder references removed; the claim boundary reads "no endorsement, partnership, or funding claim".
 - Slider `aria-valuetext` set initially and on input, so assistive tech announces
   "16 populations" and "day 60" rather than raw indices.
@@ -55,7 +57,7 @@ acceptance.
 ## Accepted as minor, not changed
 
 - All external-funder naming and the specific programme figure were removed in the de-branding
-  pass; the hero now reads "tens of millions of pounds" and the stakes scene marks the figure as an
+  pass; the hero now reads "tens of millions of dollars" and the stakes scene marks the figure as an
   illustrative programme scale, not a committed budget.
 - A small set of specialist tokens (hash-bound, standing variation, phenome,
   marker-encoded) remain for the actual research-director audience, glossed lightly where
@@ -68,7 +70,7 @@ acceptance.
 
 - Removed every external-funder and named-individual reference (agency name, the specific programme
   figure) from the artifact and its data ledgers. The cost anchor is now a generic illustrative
-  "tens of millions of pounds," clearly marked not a committed budget. A permanent leak-gate guard
+  "tens of millions USD," clearly marked not a committed budget. A permanent leak-gate guard
   fails the build on any reintroduction of those tokens.
 - Predecessor evidence PDFs (derived from external-facing briefs) were removed; the ask actions now
   point only to the technical note and the audit trail. The two registered SVG figures remain.
@@ -76,9 +78,8 @@ acceptance.
   render its canvas content in the free band beside the copy-card, with no text, box, or control
   overlapping the card. Painters made free-band-aware: stakes, blindspot, windtunnel, abstain,
   challenge, rejection, genome, ladder.
-- Owner credentials added to the page footer (always visible at the page end), with outbound mailto
-  and site links; outbound navigation links are permitted by the leak gate while remote runtime
-  resources remain banned.
+- Named-individual credentials and personal outbound links were removed from the page footer. The
+  footer retains only artifact identity and audit links, while remote runtime resources remain banned.
 
 ## Interactive redesign pass (owner-directed)
 
@@ -89,18 +90,15 @@ narrative-critic) spec'd the rebuild. A pointer layer was added to the scene eng
 motion) and painters now receive a per-instance pointer state. Everything remains
 LOOKUP ONLY: pointers select and reveal frozen rows, the browser computes nothing.
 
-- **phase** rebuilt as a verdict bench. The configured design gets a PASS/FAIL stamp,
-  decomposed into three sub-test meters: accuracy gain with the interval that must
-  clear zero, calibration against the 85-95 percent band, and the combined gate against
-  the 50 and 80 percent marks. Below sits a gain-by-coverage plane with the acceptance
-  band shaded, a PASS REGION drawn and visibly EMPTY, all 80 frozen cells plotted, the
-  measurement ladder P1 to R1 traced at the selected design, and hover-to-inspect on any
-  cell. The default design reads +17.1 percent gain, interval still touching zero,
-  79.9 percent coverage (over-confident), combined gate 21.6 percent, verdict NOT READY.
-- **frontier** rebuilt as a cost-by-value plane with a robust/conditional/dominated
-  counter strip, a value-ceiling line labelled "no plan reaches higher", a break-even
-  line, six colour-keyed measurement families, selected-package emphasis, and hover
-  tooltips over the 120 frozen policies.
+- **phase** rebuilt as a lookup bench. The configured design shows its stored accuracy
+  gain and interval, observed coverage, and combined-test probability against the frozen
+  50 and 80 percent threshold markers. The browser assigns no new verdict or calibration
+  class. On tall viewports, a gain-by-coverage plane plots all frozen cells, traces the
+  selected P1-to-R1 measurement ladder, and supports hover or click inspection.
+- **frontier** rebuilt as a modeled-resource-use-by-forecast-value plane. It shows the
+  frozen horizon rows for six colour-keyed measurement families, emphasizes the selected
+  package, marks break-even, and provides hover or click tooltips for exact policies. It
+  does not select a browser-derived best row or calculate a new value ceiling.
 - **windtunnel** rebuilt as an operable auditable chain. A coral blind boundary is drawn
   between deposit and reveal, and hovering any of the nine stages discloses what that
   stage RELEASES and what it keeps HIDDEN.

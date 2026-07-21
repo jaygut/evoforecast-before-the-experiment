@@ -1,5 +1,9 @@
 (function () {
   "use strict";
+  function prospectiveMetric(d, s) {
+    var row = d.fact(s, "EF-003"), match = row && row.text.match(/\d+\/\d+/);
+    return match ? match[0].replace("/", " / ") : "NO REGISTERED VALUE";
+  }
   window.EVO_SCENES.register("hero", function (p, t, s, d, local) {
     local = local || {};
     p.background("#06141F");
@@ -11,7 +15,7 @@
       { x: 0, y: 0, c: "#1AA89B", key: "FORECAST", note: "the network is the unit of prediction" },
       { x: -4.4, y: -1.8, c: "#F7F6F2", key: "GENOTYPE", note: "standing founder variation" },
       { x: 4.4, y: -1.2, c: "#3AD6A3", key: "PHENOTYPE + FUNCTION", note: "measured signal" },
-      { x: 0.6, y: 3.4, c: "#E8694D", key: "INTERACTIONS + KEYSTONE", note: "keystone at risk · 0 / 60 cleared before reveal" }
+      { x: 0.6, y: 3.4, c: "#E8694D", key: "INTERACTIONS + KEYSTONE", note: "keystone at risk · " + prospectiveMetric(d, s) + " cleared before reveal" }
     ];
     var gW = 8.8, gH = 5.2, gcx = 0, gcy = 0.8, padU = 1.6;
 
@@ -71,7 +75,11 @@
       var lx = Math.min(Math.max(pts[show].x + pts[show].r + 16, rx0), Math.max(rx0, rx1 - 260));
       var ly = d.clamp(pts[show].y - 4, ry0 + 10, ry1 - 26);
       d.lineLabel(p, pts[show].key, lx, ly, "#F7F6F2");
-      d.lineLabel(p, pts[show].note, lx, ly + 17, "#9FB4BD");
+      if (p.width < 680) {
+        d.wrap(p, pts[show].note, lx, ly + 8, Math.max(80, rx1 - lx), 30, { color: "#9FB4BD", mono: true, size: 8.5 });
+      } else {
+        d.lineLabel(p, pts[show].note, lx, ly + 17, "#9FB4BD");
+      }
     } else {
       d.lineLabel(p, "HOVER A NODE", rx0, 134, "rgba(234,241,241,.42)");
     }

@@ -11,7 +11,7 @@ Review context: claim registry, facts digest, source manifest, phase/portfolio e
 3. Are blind v3 and blind v5 kept distinct?
 4. Are average CRPS gain, calibration, joint-gate probability, and Pareto status kept distinct?
 5. Is the proposed ten-chromosome sexual model prevented from leaking into frozen clonal RC01 truth?
-6. Does the site preserve SLiM as the sole biological trajectory engine?
+6. Does the site identify SLiM 5.2 as the registered engine for this round while keeping the surrounding harness engine-agnostic and other simulators under evaluation?
 7. Are adverse results and abstention visible rather than buried?
 
 ## Findings and disposition

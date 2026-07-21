@@ -44,8 +44,8 @@ interactive layer was dead on a double-click. That is fixed here and verified in
 - `evidence/`: registered synthetic figures (SVG); no external-facing PDFs are shipped.
 - `technical-note.html` / `technical-note.pdf`: print-friendly three-page companion.
 - `audit/`: claim registry, source hashes, lineage, environment, reviews, V4 disposition, final audit.
-- `qa/`: file:// smoke results, screenshots, accessibility evidence, and defect log.
-- `tools/`: deterministic exporter, `build_data_bundle.py`, leak gate, `file_qa.py`, `qa_suite.py`.
+- `qa/`: file-protocol smoke results, interaction results, regenerable screenshots, accessibility evidence, and defect log.
+- `tools/`: deterministic exporter, `build_data_bundle.py`, leak gate, `file_qa.py`, `qa_suite.py`, and `scene_shots.py`.
 
 ## Verify it
 
@@ -54,6 +54,7 @@ python3 tools/build_data_bundle.py --check   # JSON <-> window.EVO_DATA parity +
 sh tools/leak_gate.sh                         # remote/randomness/path/claim + offline-first order
 python3 tools/file_qa.py                       # real Chrome file:// smoke (12 canvases, embedded data)
 python3 tools/qa_suite.py                       # voice lint, offline network-zero, a11y, screenshots
+python3 tools/scene_shots.py                    # all hotspots at 1280, 1920, and 390 px + 36 captures
 ```
 
 ## Keyboard and accessibility

@@ -68,6 +68,14 @@ def main() -> int:
     parser.add_argument("--repo", type=Path, required=True)
     parser.add_argument("--evidence-root", type=Path, required=True)
     parser.add_argument("--rc01-root", type=Path, required=True)
+    parser.add_argument(
+        "--wind-tunnel-brief",
+        type=Path,
+        help=(
+            "path to the internal design wind-tunnel brief; defaults to "
+            "<repo>/internal/design_wind_tunnel_brief.md"
+        ),
+    )
     parser.add_argument("--site-root", type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()
 
@@ -77,10 +85,15 @@ def main() -> int:
     data_dir.mkdir(parents=True, exist_ok=True)
     audit_dir.mkdir(parents=True, exist_ok=True)
 
+    wind_tunnel_brief = (
+        args.wind_tunnel_brief
+        if args.wind_tunnel_brief is not None
+        else args.repo / "internal/design_wind_tunnel_brief.md"
+    )
     sources = {
         "PROMPT": args.repo / "ai_docs/prompts/evoforecast_graph_of_life_scrollytelling_story_system.md",
         "GT01_PRD": args.repo / "docs/workstreams/gt01_daphnia_genome_phenome_forecasting_prd.md",
-        "ARIA_V5": args.repo / "ai_docs/prompts/aria_predicting_evolution_v5_digital_wind_tunnel_and_brief.md",
+        "WIND_TUNNEL_BRIEF": wind_tunnel_brief,
         "BLIND_V3_RUN": args.evidence_root / "theory-poc-v5-blind-v3/design/blind_v3_run_manifest.json",
         "BLIND_V3_PHASE": args.evidence_root / "theory-poc-v5-blind-v3/derived/forecastability_phase_diagram.tsv",
         "BLIND_V3_FRONTIER": args.evidence_root / "theory-poc-v5-blind-v3/derived/experiment_portfolio_frontier.tsv",
@@ -117,6 +130,10 @@ def main() -> int:
     prospective = [row for row in v5_phase if int(row["information_horizon_days"]) < 90]
     v5_gp1 = next(row for row in v5_ladder if row["model"] == "GP1")
     v5_r1 = next(row for row in v5_ladder if row["model"] == "R1")
+    if v5_gp1["registered_comparator"] != "P1":
+        raise SystemExit("GP1 model-ladder row does not use the registered P1 comparator")
+    if v5_r1["registered_comparator"] != "GP1":
+        raise SystemExit("R1 model-ladder row does not use the registered GP1 comparator")
 
     claims = [
         claim("EF-001", "EvoForecast is a synthetic digital wind tunnel for testing experimental-design informativeness before scale-up.", "synthetic", "PROMPT", "concept", "not applicable", "synthetic design instrument", "validated biological forecasting system", "No real laboratory outcomes are present."),
@@ -131,16 +148,20 @@ def main() -> int:
         claim("EF-010", f"The matched adverse control shows a {100*adverse['relative_genome_crps_gain']:.1f}% genome-versus-pedigree CRPS gain.", "synthetic", "ADVERSE_CONTROL", "percent", str(adverse["main_seed_blocks"]) + " seed blocks", "adverse marker-encoded software control", "genomic data are harmful in biology", "A negative control demonstrates that the workflow can expose failure."),
         claim("EF-011", f"The earlier RC01 synthetic POC verified {rc01['jobs']:,} immutable jobs.", "synthetic", "RC01_SUMMARY", "jobs", str(rc01["jobs"]), "earlier RC01 software-verification jobs", "empirical experiments", "Execution count is software evidence; biological validation remains blocked."),
         claim("EF-012", "The proposed GT01 theoretical cutaway uses diploid, ten-chromosome, sexual recombination and standing variation.", "proposed", "GT01_PRD", "chromosomes", "10", "proposed post-RC01 theoretical design", "implemented or calibrated Daphnia genome model", "GT01 is gated and does not alter the frozen clonal RC01 production model."),
-        claim("EF-013", "SLiM 5.2 is the sole biological trajectory engine; Python orchestrates, exports, and scores.", "synthetic", "GT01_PRD", "engine boundary", "not applicable", "registered software boundary", "Python simulates the biological reference world", "This site performs lookup only and contains no simulator."),
-        claim("EF-014", "£40–50m is user-supplied external programme context, not an ARIA commitment or an engine recommendation.", "external", "ARIA_V5", "GBP", "external context only", "user-supplied external context", "ARIA committed £40–50m", "No authoritative budget source is embedded in this bundle."),
+        claim("EF-013", "SLiM 5.2 is the registered biological trajectory engine for this round; Python orchestrates, exports, and scores.", "synthetic", "GT01_PRD", "engine boundary", "not applicable", "registered software boundary for this round", "Python simulates the biological reference world", "This site performs lookup only and contains no simulator."),
+        claim("EF-014", "An illustrative large-programme budget on the order of tens of millions of US dollars, used as external context only, not a committed budget or an engine recommendation.", "external", "WIND_TUNNEL_BRIEF", "programme scale", "external context only", "illustrative external context", "a committed or endorsed programme budget", "No authoritative budget source is embedded in this bundle."),
         claim("EF-015", "Empirical qualification has not been achieved.", "blocked", "GT01_PRD", "maturity state", "not applicable", "empirical qualification is blocked", "validated, qualified, or operational", "Requires controlled material, accepted evidence, real assays, custody, independent prospective reveal, and external reproduction."),
         claim("EF-016", "V3–V5 describe software and challenge-design maturation, not biological generations.", "synthetic", "PROMPT", "chronology", "software snapshots", "software/challenge chronology", "biological evolutionary sequence", "Cohorts differ in registered synthetic design and scoring treatment."),
         claim("EF-017", f"The earlier RC01 synthetic POC verified {sum(1 for _ in sources['RC01_ENDPOINTS'].open(encoding='utf-8')) - 1:,} run-horizon endpoint records.", "synthetic", "RC01_ENDPOINTS", "endpoint records", "12,304", "earlier RC01 run-horizon endpoint records", "empirical measurements", "Records are synthetic endpoints at four registered horizons."),
     ]
 
-    do_not_say = sorted({c["forbidden_wording"] for c in claims}) + [
+    budget_boundary = "a committed or endorsed programme budget"
+    do_not_say = sorted(
+        {c["forbidden_wording"] for c in claims},
+        key=lambda text: (text != budget_boundary, text),
+    ) + [
         "EvoForecast predicts evolution",
-        "ARIA result",
+        "an external funder result",
         "real Daphnia forecast",
         "world first",
         "biologically validated",
@@ -148,7 +169,7 @@ def main() -> int:
     digest = {
         "schema_version": SCHEMA,
         "snapshot_date": SNAPSHOT_DATE,
-        "claim_boundary": "Synthetic software and experimental-design evidence only; no empirical Daphnia forecast skill, GT01/G1 qualification, or ARIA endorsement.",
+        "claim_boundary": "Synthetic software and experimental-design evidence only; no empirical Daphnia forecast skill, GT01/G1 qualification, or external endorsement.",
         "claims": claims,
         "do_not_say": do_not_say,
     }
@@ -199,7 +220,7 @@ def main() -> int:
     locator_map = {
         "PROMPT": "repo://ai_docs/prompts/evoforecast_graph_of_life_scrollytelling_story_system.md",
         "GT01_PRD": "repo://docs/workstreams/gt01_daphnia_genome_phenome_forecasting_prd.md",
-        "ARIA_V5": "repo://ai_docs/prompts/aria_predicting_evolution_v5_digital_wind_tunnel_and_brief.md",
+        "WIND_TUNNEL_BRIEF": "repo://internal/design_wind_tunnel_brief.md",
     }
     def locator(source_id: str, path: Path) -> str:
         if source_id in locator_map:
@@ -224,7 +245,11 @@ def main() -> int:
             {
                 "source_id": sid,
                 "locator": locator(sid, path),
-                "basename": path.name,
+                "basename": (
+                    "design_wind_tunnel_brief.md"
+                    if sid == "WIND_TUNNEL_BRIEF"
+                    else path.name
+                ),
                 "sha256": sha256(path),
                 "bytes": path.stat().st_size,
                 "mutable": False,

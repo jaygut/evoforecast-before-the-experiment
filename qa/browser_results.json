@@ -1,16 +1,17 @@
 [
   {
-    "adverse_readout": "Adverse / OOD \u00b7 \u22129.2% \u00b7 Matched adverse software control",
+    "adverse_readout": "Adverse control \u00b7 -9.2% \u00b7 Matched control with the signal removed",
     "console_errors": [],
     "fonts": {
       "mono": true,
       "sans": true,
       "status": "loaded"
     },
-    "frontier_readout": "Deep phenome \u00b7 day 60 \u00b7 highest membership 8% \u00b7 dominated or miscalibrated",
+    "frontier_readout": "Deep phenome \u00b7 day 60 \u00b7 exact frozen rows across registered population counts \u00b7 No blind-v5 policy was classified robustly Pareto optimal: 0/120.",
     "horizontal_overflow_px": 0,
     "label": "desktop",
-    "phase_readout": "BLIND V3 \u00b7 G1 \u00b7 16 populations \u00b7 day 60 \u00b7 gate probability 54% \u00b7 mean CRPS gain 18.1% \u00b7 coverage 86%",
+    "page_errors": [],
+    "phase_readout": "BLIND V3 \u00b7 GENOME \u00b7 16 populations \u00b7 day 60 \u00b7 single-cell lookup \u00b7 combined-test probability 53.5% \u00b7 accuracy gain 18.1% \u00b7 coverage 85.7%",
     "remote_requests": [],
     "scenes": [
       {
@@ -55,6 +56,36 @@
       },
       {
         "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "abstain"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "rejection"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "challenge"
+      },
+      {
+        "box": {
           "height": 2250,
           "width": 1440,
           "x": 0,
@@ -81,7 +112,7 @@
           "y": -540
         },
         "canvas": 1,
-        "id": "challenge"
+        "id": "ladder"
       },
       {
         "box": {
@@ -101,57 +132,38 @@
           "y": -540
         },
         "canvas": 1,
-        "id": "abstain"
-      },
-      {
-        "box": {
-          "height": 1980,
-          "width": 1440,
-          "x": 0,
-          "y": -540
-        },
-        "canvas": 1,
-        "id": "ladder"
-      },
-      {
-        "box": {
-          "height": 1980,
-          "width": 1440,
-          "x": 0,
-          "y": -540
-        },
-        "canvas": 1,
         "id": "ask"
       }
     ],
     "semantics": {
       "boundary": true,
-      "caveats": 11,
+      "caveats": 12,
       "h1": 1,
       "live": 5,
       "main": 1,
-      "sections": 11,
+      "sections": 12,
       "skip": true,
-      "sourcePills": 11
+      "sourcePills": 12
     }
   },
   {
-    "adverse_readout": "Adverse / OOD \u00b7 \u22129.2% \u00b7 Matched adverse software control",
+    "adverse_readout": "Adverse control \u00b7 -9.2% \u00b7 Matched control with the signal removed",
     "console_errors": [],
     "fonts": {
       "mono": true,
       "sans": true,
       "status": "loaded"
     },
-    "frontier_readout": "Deep phenome \u00b7 day 60 \u00b7 highest membership 8% \u00b7 dominated or miscalibrated",
+    "frontier_readout": "Deep phenome \u00b7 day 60 \u00b7 exact frozen rows across registered population counts \u00b7 No blind-v5 policy was classified robustly Pareto optimal: 0/120.",
     "horizontal_overflow_px": 0,
     "label": "mobile",
-    "phase_readout": "BLIND V3 \u00b7 G1 \u00b7 16 populations \u00b7 day 60 \u00b7 gate probability 54% \u00b7 mean CRPS gain 18.1% \u00b7 coverage 86%",
+    "page_errors": [],
+    "phase_readout": "BLIND V3 \u00b7 GENOME \u00b7 16 populations \u00b7 day 60 \u00b7 single-cell lookup \u00b7 combined-test probability 53.5% \u00b7 accuracy gain 18.1% \u00b7 coverage 85.7%",
     "remote_requests": [],
     "scenes": [
       {
         "box": {
-          "height": 1170.515625,
+          "height": 1592.296875,
           "width": 390,
           "x": 0,
           "y": 0
@@ -161,100 +173,110 @@
       },
       {
         "box": {
-          "height": 1057.296875,
+          "height": 1246.109375,
           "width": 390,
           "x": 0,
-          "y": -106.484375
+          "y": -200.703125
         },
         "canvas": 1,
         "id": "stakes"
       },
       {
         "box": {
-          "height": 1057.296875,
+          "height": 1434.703125,
           "width": 390,
           "x": 0,
-          "y": -106.1875
+          "y": -295.59375
         },
         "canvas": 1,
         "id": "blindspot"
       },
       {
         "box": {
-          "height": 1039.90625,
+          "height": 1484.6875,
           "width": 390,
           "x": 0,
-          "y": -97.890625
+          "y": -319.890625
         },
         "canvas": 1,
         "id": "windtunnel"
       },
       {
         "box": {
-          "height": 1377.890625,
+          "height": 1323.828125,
           "width": 390,
           "x": 0,
-          "y": -266.984375
-        },
-        "canvas": 1,
-        "id": "phase"
-      },
-      {
-        "box": {
-          "height": 1222.953125,
-          "width": 390,
-          "x": 0,
-          "y": -189.09375
-        },
-        "canvas": 1,
-        "id": "frontier"
-      },
-      {
-        "box": {
-          "height": 1241.296875,
-          "width": 390,
-          "x": 0,
-          "y": -199.140625
-        },
-        "canvas": 1,
-        "id": "challenge"
-      },
-      {
-        "box": {
-          "height": 1148.578125,
-          "width": 390,
-          "x": 0,
-          "y": -151.84375
-        },
-        "canvas": 1,
-        "id": "genome"
-      },
-      {
-        "box": {
-          "height": 1023.921875,
-          "width": 390,
-          "x": 0,
-          "y": -90.265625
+          "y": -240.203125
         },
         "canvas": 1,
         "id": "abstain"
       },
       {
         "box": {
-          "height": 1294.5625,
+          "height": 1252.578125,
           "width": 390,
           "x": 0,
-          "y": -225.34375
+          "y": -204.375
+        },
+        "canvas": 1,
+        "id": "rejection"
+      },
+      {
+        "box": {
+          "height": 1773.703125,
+          "width": 390,
+          "x": 0,
+          "y": -464.796875
+        },
+        "canvas": 1,
+        "id": "challenge"
+      },
+      {
+        "box": {
+          "height": 1530.6875,
+          "width": 390,
+          "x": 0,
+          "y": -343.09375
+        },
+        "canvas": 1,
+        "id": "phase"
+      },
+      {
+        "box": {
+          "height": 1426.3125,
+          "width": 390,
+          "x": 0,
+          "y": -291.40625
+        },
+        "canvas": 1,
+        "id": "frontier"
+      },
+      {
+        "box": {
+          "height": 1489.84375,
+          "width": 390,
+          "x": 0,
+          "y": -323.09375
         },
         "canvas": 1,
         "id": "ladder"
       },
       {
         "box": {
-          "height": 1375.09375,
+          "height": 1393.484375,
           "width": 390,
           "x": 0,
-          "y": -265.78125
+          "y": -274.25
+        },
+        "canvas": 1,
+        "id": "genome"
+      },
+      {
+        "box": {
+          "height": 1669.859375,
+          "width": 390,
+          "x": 0,
+          "y": -412.765625
         },
         "canvas": 1,
         "id": "ask"
@@ -262,13 +284,13 @@
     ],
     "semantics": {
       "boundary": true,
-      "caveats": 11,
+      "caveats": 12,
       "h1": 1,
       "live": 5,
       "main": 1,
-      "sections": 11,
+      "sections": 12,
       "skip": true,
-      "sourcePills": 11
+      "sourcePills": 12
     }
   },
   {
@@ -280,7 +302,7 @@
     "boundary_visible": true,
     "label": "no_javascript",
     "noscript_visible": true,
-    "scene_titles": 11,
-    "source_pills": 11
+    "scene_titles": 12,
+    "source_pills": 12
   }
 ]

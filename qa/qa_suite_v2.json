@@ -2,6 +2,23 @@
   "voice_violations": [],
   "banned_char_hits": [],
   "remote_requests": [],
+  "console_errors": [],
+  "page_errors": [],
+  "static_copy_mismatches": [],
+  "numeric_invariants": {
+    "runs_5600_of_5600": true,
+    "model_ladder_35_contexts": true,
+    "model_ladder_47_5_gain": true,
+    "model_ladder_80_coverage": true,
+    "phase_48_day60_is_39_3_68_3": true,
+    "r1_increment_is_0_0": true,
+    "prospective_0_of_60": true,
+    "robust_0_of_80": true,
+    "plans_0_of_120": true,
+    "sole_indicative_is_day90_52_5": true,
+    "favorable_control_17_0": true,
+    "adverse_control_minus_9_2": true
+  },
   "a11y": {
     "h1_count": 1,
     "skip_link": true,
@@ -32,7 +49,8 @@
   ],
   "verdict": "PASS",
   "mobile_body_overflow": true,
-  "reduced_motion_canvas": 2,
+  "reduced_motion_canvas": 12,
+  "reduced_motion_pointer_static": true,
   "nojs_sections": 12,
   "nojs_noscript_visible": true
 }

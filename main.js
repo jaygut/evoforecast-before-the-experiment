@@ -9,13 +9,38 @@
   var state = {
     phaseRows: [], phaseSelected: { cohort: "blind_v5", model: "GP1", arms: 16, horizon: 60 },
     portfolioRows: [], portfolioSelected: { package: "genome_plus_phenome", horizon: 60 },
-    timeline: null, genome: null, challengeMode: "blind", freeBands: {}
+    timeline: null, genome: null, facts: null, phaseThresholds: null, challengeMode: "blind", freeBands: {}
   };
 
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
   function byId(id) { return doc.getElementById(id); }
   function text(id, value) { var n = byId(id); if (n) { n.textContent = value; } }
   function setStatus(message) { text("interaction-status", message); }
+  function factRow(claimId) {
+    var rows = data.facts && data.facts.claims;
+    if (!rows) { return null; }
+    return rows.find(function (row) { return row.claim_id === claimId; }) || null;
+  }
+  function timelineRow(eventId) {
+    var rows = data.timeline && data.timeline.events;
+    if (!rows) { return null; }
+    return rows.find(function (row) { return row.id === eventId; }) || null;
+  }
+  function challengeValue(mode) {
+    var row, match;
+    if (mode === "positive" || mode === "adverse") {
+      row = timelineRow(mode === "positive" ? "v3_positive" : "v3_adverse");
+      match = row && row.detail.match(/[+\-\u2212]?\d+(?:\.\d+)?%/);
+    } else {
+      row = factRow("EF-003");
+      match = row && row.text.match(/\d+\/\d+/);
+    }
+    return match ? match[0].replace("\u2212", "-").replace("/", " / ") : "registered row unavailable";
+  }
+  function updateChallengeReadout() {
+    var m = config.challengeModes[state.challengeMode];
+    text("challenge-readout", m.label + " · " + challengeValue(state.challengeMode) + " · " + m.note);
+  }
 
   function loadJSON(url) {
     return root.fetch(url, { cache: "no-store" }).then(function (response) {
@@ -85,7 +110,8 @@
     if (instances[id]) { return; }
     var host = byId("visual-" + id);
     if (!host) { return; }
-    instances[id] = root.EVO_SCENES.create(id, host, state);
+    var instance = root.EVO_SCENES.create(id, host, state);
+    if (instance) { instances[id] = instance; }
   }
 
   function measureFreeBands() {
@@ -126,7 +152,7 @@
     state.phaseRows = cohorts[state.phaseSelected.cohort];
     var row = phaseRow();
     if (!row) { return; }
-    text("phase-readout", state.phaseSelected.cohort.replace("_", " ").toUpperCase() + " · " + (config.modelLabels[state.phaseSelected.model] || state.phaseSelected.model) + " · " + state.phaseSelected.arms + " populations · day " + state.phaseSelected.horizon + " · single-cell lookup · combined-test probability " + Math.round(parseFloat(row.probability_meeting_definition) * 100) + "% · accuracy gain " + (parseFloat(row.mean_relative_crps_gain) * 100).toFixed(1) + "% · coverage " + (parseFloat(row.coverage_90) * 100).toFixed(1) + "%");
+    text("phase-readout", state.phaseSelected.cohort.replace("_", " ").toUpperCase() + " · " + (config.modelLabels[state.phaseSelected.model] || state.phaseSelected.model) + " · " + state.phaseSelected.arms + " populations · day " + state.phaseSelected.horizon + " · single-cell lookup · combined-test probability " + (parseFloat(row.probability_meeting_definition) * 100).toFixed(1) + "% · accuracy gain " + (parseFloat(row.mean_relative_crps_gain) * 100).toFixed(1) + "% · coverage " + (parseFloat(row.coverage_90) * 100).toFixed(1) + "%");
     if (instances.phase) { instances.phase.setState(state); }
     setStatus("Phase cell updated. Lookup only; no values were recalculated.");
   }
@@ -136,8 +162,8 @@
     var matches = state.portfolioRows.filter(function (row) {
       return row.measurement_package === state.portfolioSelected.package && row.information_horizon_days === String(state.portfolioSelected.horizon);
     });
-    var best = matches.slice().sort(function (a, b) { return parseFloat(b.pareto_membership_probability) - parseFloat(a.pareto_membership_probability); })[0];
-    text("frontier-readout", config.packageLabels[state.portfolioSelected.package] + " · day " + state.portfolioSelected.horizon + (best ? " · " + best.status.replace(/_/g, " ") + " · Pareto-membership " + Math.round(parseFloat(best.pareto_membership_probability) * 100) + "% · none robustly best" : " · no registered cell"));
+    var claim = data.facts.claims.find(function (row) { return row.claim_id === "EF-006"; });
+    text("frontier-readout", config.packageLabels[state.portfolioSelected.package] + " · day " + state.portfolioSelected.horizon + (matches.length ? " · exact frozen rows across registered population counts · " + (claim ? claim.text : "See each row's stored status in the figure.") : " · no registered row"));
     if (instances.frontier) { instances.frontier.setState(state); }
     setStatus("Portfolio filter updated. Display remains a preregistered lookup.");
   }
@@ -156,7 +182,7 @@
         doc.querySelectorAll("[data-challenge-mode]").forEach(function (b) { b.setAttribute("aria-pressed", b === button ? "true" : "false"); });
         if (instances.challenge) { instances.challenge.setState(state); }
         var m = config.challengeModes[state.challengeMode];
-        text("challenge-readout", m.label + " · " + m.value + " · " + m.note);
+        updateChallengeReadout();
         setStatus("Challenge reference changed to " + m.label + ".");
       });
     });
@@ -179,7 +205,7 @@
     hydrateCopy();
     loadData().then(function (values) {
       data.phase=values[0]; data.portfolio=values[1]; data.timeline=values[2]; data.genome=values[3]; data.facts=values[4];
-      state.timeline=data.timeline; state.genome=data.genome; updatePhase(); updateFrontier();
+      state.timeline=data.timeline; state.genome=data.genome; state.facts=data.facts; state.phaseThresholds=data.phase.thresholds; updatePhase(); updateFrontier(); updateChallengeReadout();
       installControls(); installObservers(); installKeyboard(); requestUpdate();
       measureFreeBands();
       if (doc.fonts && doc.fonts.ready) { doc.fonts.ready.then(function () { measureFreeBands(); requestUpdate(); }); }
@@ -190,8 +216,8 @@
       doc.documentElement.classList.add("load-failed");
     });
     root.addEventListener("scroll", requestUpdate, { passive: true });
-    root.addEventListener("resize", function () { measureFreeBands(); Object.keys(instances).forEach(function (id) { instances[id].resize(); }); requestUpdate(); });
-    doc.addEventListener("visibilitychange", function () { Object.keys(instances).forEach(function (id) { instances[id].setActive(!doc.hidden && active[id]); }); });
+    root.addEventListener("resize", function () { measureFreeBands(); Object.keys(instances).forEach(function (id) { if (instances[id]) { instances[id].resize(); } }); requestUpdate(); });
+    doc.addEventListener("visibilitychange", function () { Object.keys(instances).forEach(function (id) { if (instances[id]) { instances[id].setActive(!doc.hidden && active[id]); } }); });
   }
   if (doc.readyState === "loading") { doc.addEventListener("DOMContentLoaded", boot); } else { boot(); }
 }(window, document));

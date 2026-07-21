@@ -1,6 +1,6 @@
 # QA summary (successor v2)
 
-Final gate date: 20 July 2026
+Final gate date: 21 July 2026
 
 The predecessor QA was captured over a loopback HTTP origin, which proved no remote requests but
 not that the bundle runs from `file://`. That gap hid a critical defect: opened by double-click,
@@ -18,9 +18,13 @@ re-runs QA over a genuine `file://` origin in real Chrome.
 | Voice lint on rendered prose | pass | `tools/qa_suite.py`: no em/en-dash, no semicolon in prose, no negation-correction, no stock phrase |
 | Accessibility basics | pass | one h1, ordered h2, skip link, zero unlabeled controls, all canvases aria-hidden |
 | Desktop 1280×900 | pass | `screenshots/v2_desktop_hero.png`, `v2_desktop_v5result.png`, `v2_desktop_rejection.png` |
-| Mobile 390×844 | pass | `screenshots/v2_mobile_hero.png`; body scroll width within viewport (no horizontal overflow) |
+| Wide desktop 1920×1080 | pass | all 12 scenes exercised by `tools/scene_shots.py` |
+| Mobile 390×844 | pass | all 12 scenes exercised; body scroll width within viewport (no horizontal overflow) |
+| Pointer disclosure and pinning | pass | 167 scene hotspots exercised across three widths; hover disclosed and click pinned every available target |
+| Discrete scene controls | pass | 84 challenge, phase, and frontier cases exercised across three widths |
 | Reduced motion | pass | `screenshots/v2_reduced_motion.png`; scenes present and frozen at resolved state |
 | No JavaScript | pass | `screenshots/v2_no_javascript.png`; 12 sections and noscript summary in document order |
+| Manual visual inspection | pass | all 36 current scene captures, the two-page DOCX, and all three A4 note pages inspected; compact-layout defects corrected and recaptured |
 | Three-page A4 note | pass | `technical-note.pdf` regenerated from the corrected, voice-compliant HTML |
 | Independent review (scientific / comms / fresh-reader / voice-a11y) | see `audit/final_audit.md` | parallel adversarial review, findings triaged |
 

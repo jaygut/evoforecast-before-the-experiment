@@ -3,7 +3,7 @@
 2026-07-20T18:00:57Z  COPY  minimum immutable PDFs/SVGs and approved local p5/font dependencies; source bytes preserved
 2026-07-20T18:00:57Z  EXPORT  python3 tools/export_static_facts.py --repo "$REPO" --evidence-root "$EVIDENCE_ROOT" --rc01-root "$RC01_ROOT"
 2026-07-20T18:00:57Z  SERVE  python3 -m http.server 8877 --bind 127.0.0.1
-2026-07-20T18:00:57Z  CAPTURE  python3 tools/capture_references.py
+2026-07-20T18:00:57Z  OMIT  raw third-party reference captures from the published tree to enforce the named-individual boundary
 2026-07-20T18:00:57Z  VALIDATE  python3 tools/validate_bundle.py --repo "$REPO" --evidence-root "$EVIDENCE_ROOT" --rc01-root "$RC01_ROOT"
 2026-07-20T18:00:57Z  LEAK  sh tools/leak_gate.sh
 2026-07-20T18:00:57Z  BROWSER  python3 tools/browser_qa.py
@@ -11,3 +11,12 @@
 2026-07-20T18:00:57Z  REVIEW  fresh-context scientific/claim pass; SCI-01–04 resolved
 2026-07-20T18:00:57Z  REVIEW  fresh-context visual/narrative pass; VIS-01–03 fixed, VIS-04 explicitly accepted
 2026-07-20T18:00:57Z  FINALIZE  python3 tools/finalize_bundle.py
+2026-07-21  RECOMPUTE  independently derived model-ladder, phase-cell, portfolio, and control figures from data/*.json; all displayed values matched frozen rows
+2026-07-21  REVIEW  read the twelve-beat narrative as a sceptical evolutionary geneticist and as a non-specialist programme leader; rewrote claim boundaries, first-use definitions, and the opening decision frame
+2026-07-21  INSPECT  reviewed first-party browser, library, scene, and tool code for forbidden computation, frozen-row provenance, hit testing, clamping, coordinate mapping, and reduced-motion behavior
+2026-07-21  GATE  python3 tools/build_data_bundle.py --check; passed with SHA-256 ead682dfc541c4bbe8f4f3fea27bbb4031916dbe8736317f9cff8ea7e00645ae
+2026-07-21  GATE  sh tools/leak_gate.sh; passed full-tree boundary, relationship, offline-order, and bundle-parity checks
+2026-07-21  GATE  python3 tools/file_qa.py; passed with exactly 12 canvases and zero console or page errors
+2026-07-21  GATE  python3 tools/qa_suite.py; passed numeric invariants, prose parity, voice, network-zero, reduced-motion, and no-JavaScript checks
+2026-07-21  GATE  python3 tools/scene_shots.py; passed 1280x900, 1920x1080, and 390x844 interaction sweeps with 167 scene hotspots and all 84 DOM-control cases exercised
+2026-07-21  VISUAL  inspected all 36 current scene captures plus the two-page DOCX and three-page technical note; corrected compact blindspot, wind-tunnel, ladder, and genome layouts and re-ran browser gates

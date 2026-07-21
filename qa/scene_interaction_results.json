@@ -1,0 +1,1452 @@
+{
+  "browser": "Google Chrome",
+  "url": "index.html opened with the file protocol",
+  "verdict": "PASS",
+  "viewports": {
+    "desk1280": {
+      "canvas_count": 12,
+      "console_errors": [],
+      "controls": {
+        "challenge_button_cases": 3,
+        "challenge_buttons": true,
+        "frontier_control_cases": 10,
+        "frontier_controls": true,
+        "phase_control_cases": 15,
+        "phase_controls": true
+      },
+      "page_errors": [],
+      "scenes": {
+        "abstain": {
+          "card_rect": {
+            "height": 694,
+            "width": 470,
+            "x": 89.6,
+            "y": 170
+          },
+          "click_pinned": true,
+          "hotspot_count": 2,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_abstain.png",
+          "targets_canvas_xy": [
+            [
+              734.6,
+              264.8
+            ],
+            [
+              1114.3,
+              291.7
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "ask": {
+          "card_rect": {
+            "height": 694,
+            "width": 620,
+            "x": 89.6,
+            "y": 188
+          },
+          "click_pinned": true,
+          "hotspot_count": 3,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_ask.png",
+          "targets_canvas_xy": [
+            [
+              991.8,
+              181.0
+            ],
+            [
+              991.8,
+              263.0
+            ],
+            [
+              991.8,
+              345.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "blindspot": {
+          "card_rect": {
+            "height": 694,
+            "width": 470,
+            "x": 707.6,
+            "y": 170
+          },
+          "click_pinned": true,
+          "hotspot_count": 3,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_blindspot.png",
+          "targets_canvas_xy": [
+            [
+              359.8,
+              181.0
+            ],
+            [
+              359.8,
+              283.0
+            ],
+            [
+              359.8,
+              385.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "challenge": {
+          "card_rect": {
+            "height": 694,
+            "width": 470,
+            "x": 89.6,
+            "y": 170
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_challenge.png",
+          "targets_canvas_xy": [
+            [
+              623.6,
+              279.0
+            ],
+            [
+              773.7,
+              279.0
+            ],
+            [
+              923.8,
+              279.0
+            ],
+            [
+              1073.9,
+              279.0
+            ],
+            [
+              1224.0,
+              279.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "frontier": {
+          "card_rect": {
+            "height": 748,
+            "width": 470,
+            "x": 707.6,
+            "y": 143
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_frontier.png",
+          "targets_canvas_xy": [
+            [
+              374.4,
+              321.1
+            ],
+            [
+              390.4,
+              357.8
+            ],
+            [
+              406.3,
+              332.7
+            ],
+            [
+              454.1,
+              317.5
+            ],
+            [
+              549.7,
+              370.8
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "genome": {
+          "card_rect": {
+            "height": 694,
+            "width": 470,
+            "x": 89.6,
+            "y": 170
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_genome.png",
+          "targets_canvas_xy": [
+            [
+              1075.6,
+              161.0
+            ],
+            [
+              1075.6,
+              215.0
+            ],
+            [
+              1075.6,
+              269.0
+            ],
+            [
+              1075.6,
+              323.0
+            ],
+            [
+              1075.6,
+              377.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "hero": {
+          "card_rect": {
+            "height": 694,
+            "width": 620,
+            "x": 89.6,
+            "y": 188
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_hero.png",
+          "targets_canvas_xy": [
+            [
+              994.8,
+              455.7
+            ],
+            [
+              806.2,
+              378.5
+            ],
+            [
+              1183.4,
+              404.3
+            ],
+            [
+              1020.5,
+              601.5
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "ladder": {
+          "card_rect": {
+            "height": 694,
+            "width": 470,
+            "x": 707.6,
+            "y": 170
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_ladder.png",
+          "targets_canvas_xy": [
+            [
+              320.8,
+              439.0
+            ],
+            [
+              343.8,
+              355.0
+            ],
+            [
+              366.8,
+              271.0
+            ],
+            [
+              389.8,
+              187.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "phase": {
+          "card_rect": {
+            "height": 748,
+            "width": 470,
+            "x": 89.6,
+            "y": 143
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_phase.png",
+          "targets_canvas_xy": [
+            [
+              913.8,
+              210
+            ],
+            [
+              913.8,
+              262
+            ],
+            [
+              913.8,
+              314
+            ],
+            [
+              911.9,
+              454.7
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "rejection": {
+          "card_rect": {
+            "height": 694,
+            "width": 470,
+            "x": 707.6,
+            "y": 170
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_rejection.png",
+          "targets_canvas_xy": [
+            [
+              72,
+              181.0
+            ],
+            [
+              72,
+              232.0
+            ],
+            [
+              72,
+              283.0
+            ],
+            [
+              72,
+              334.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "stakes": {
+          "card_rect": {
+            "height": 694,
+            "width": 470,
+            "x": 89.6,
+            "y": 170
+          },
+          "click_pinned": true,
+          "hotspot_count": 8,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_stakes.png",
+          "targets_canvas_xy": [
+            [
+              919.8,
+              387.0
+            ],
+            [
+              919.8,
+              171.0
+            ],
+            [
+              1088.7,
+              252.3
+            ],
+            [
+              1130.4,
+              435.1
+            ],
+            [
+              1013.5,
+              581.6
+            ],
+            [
+              826.1,
+              581.6
+            ],
+            [
+              709.2,
+              435.1
+            ],
+            [
+              750.9,
+              252.3
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "windtunnel": {
+          "card_rect": {
+            "height": 694,
+            "width": 560,
+            "x": 89.6,
+            "y": 170
+          },
+          "click_pinned": true,
+          "hotspot_count": 9,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/desk1280_windtunnel.png",
+          "targets_canvas_xy": [
+            [
+              771.0,
+              160.0
+            ],
+            [
+              962.8,
+              160.0
+            ],
+            [
+              1154.6,
+              160.0
+            ],
+            [
+              771.0,
+              272.0
+            ],
+            [
+              962.8,
+              272.0
+            ],
+            [
+              1154.6,
+              272.0
+            ],
+            [
+              771.0,
+              384.0
+            ],
+            [
+              962.8,
+              384.0
+            ],
+            [
+              1154.6,
+              384.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 900,
+            "width": 1280,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "viewport": {
+        "height": 900,
+        "width": 1280
+      }
+    },
+    "mobile390": {
+      "canvas_count": 12,
+      "console_errors": [],
+      "controls": {
+        "challenge_button_cases": 3,
+        "challenge_buttons": true,
+        "frontier_control_cases": 10,
+        "frontier_controls": true,
+        "phase_control_cases": 15,
+        "phase_controls": true
+      },
+      "page_errors": [],
+      "scenes": {
+        "abstain": {
+          "card_rect": {
+            "height": 800.6,
+            "width": 362,
+            "x": 14,
+            "y": 523.1
+          },
+          "click_pinned": true,
+          "hotspot_count": 2,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_abstain.png",
+          "targets_canvas_xy": [
+            [
+              104.3,
+              165.6
+            ],
+            [
+              295.4,
+              179.1
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": -0.2
+          }
+        },
+        "ask": {
+          "card_rect": {
+            "height": 1146.6,
+            "width": 362,
+            "x": 14,
+            "y": 522.8
+          },
+          "click_pinned": true,
+          "hotspot_count": 3,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_ask.png",
+          "targets_canvas_xy": [
+            [
+              195.0,
+              168.0
+            ],
+            [
+              195.0,
+              252.0
+            ],
+            [
+              195.0,
+              336.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": -0.5
+          }
+        },
+        "blindspot": {
+          "card_rect": {
+            "height": 911.4,
+            "width": 362,
+            "x": 14,
+            "y": 523.7
+          },
+          "click_pinned": true,
+          "hotspot_count": 3,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_blindspot.png",
+          "targets_canvas_xy": [
+            [
+              196.0,
+              170.0
+            ],
+            [
+              196.0,
+              248.0
+            ],
+            [
+              196.0,
+              326.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": 0.4
+          }
+        },
+        "challenge": {
+          "card_rect": {
+            "height": 1293.7,
+            "width": 362,
+            "x": 14,
+            "y": 523.5
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_challenge.png",
+          "targets_canvas_xy": [
+            [
+              54.0,
+              162.2
+            ],
+            [
+              124.0,
+              162.2
+            ],
+            [
+              194.0,
+              162.2
+            ],
+            [
+              264.0,
+              162.2
+            ],
+            [
+              334.0,
+              162.2
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": 0.2
+          }
+        },
+        "frontier": {
+          "card_rect": {
+            "height": 903.0,
+            "width": 362,
+            "x": 14,
+            "y": 523.2
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_frontier.png",
+          "targets_canvas_xy": [
+            [
+              213.3,
+              239.2
+            ],
+            [
+              220.1,
+              254.3
+            ],
+            [
+              226.8,
+              244.0
+            ],
+            [
+              247.2,
+              237.7
+            ],
+            [
+              287.8,
+              259.7
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": -0.1
+          }
+        },
+        "genome": {
+          "card_rect": {
+            "height": 870.2,
+            "width": 362,
+            "x": 14,
+            "y": 523.3
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_genome.png",
+          "targets_canvas_xy": [
+            [
+              266.4,
+              157.0
+            ],
+            [
+              266.4,
+              199.0
+            ],
+            [
+              266.4,
+              241.0
+            ],
+            [
+              266.4,
+              283.0
+            ],
+            [
+              266.4,
+              325.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": 0.0
+          }
+        },
+        "hero": {
+          "card_rect": {
+            "height": 1069.0,
+            "width": 362,
+            "x": 14,
+            "y": 523.3
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_hero.png",
+          "targets_canvas_xy": [
+            [
+              195.0,
+              278.8
+            ],
+            [
+              69.6,
+              227.5
+            ],
+            [
+              320.4,
+              244.6
+            ],
+            [
+              212.1,
+              375.7
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "ladder": {
+          "card_rect": {
+            "height": 966.6,
+            "width": 362,
+            "x": 14,
+            "y": 523.5
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_ladder.png",
+          "targets_canvas_xy": [
+            [
+              157.0,
+              332.0
+            ],
+            [
+              180.0,
+              268.0
+            ],
+            [
+              203.0,
+              204.0
+            ],
+            [
+              226.0,
+              140.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": 0.2
+          }
+        },
+        "phase": {
+          "card_rect": {
+            "height": 1007.4,
+            "width": 362,
+            "x": 14,
+            "y": 523.5
+          },
+          "click_pinned": true,
+          "hotspot_count": 3,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_phase.png",
+          "targets_canvas_xy": [
+            [
+              193.0,
+              210
+            ],
+            [
+              193.0,
+              262
+            ],
+            [
+              193.0,
+              314
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": 0.2
+          }
+        },
+        "rejection": {
+          "card_rect": {
+            "height": 729.3,
+            "width": 362,
+            "x": 14,
+            "y": 522.9
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_rejection.png",
+          "targets_canvas_xy": [
+            [
+              72,
+              131
+            ],
+            [
+              72,
+              182
+            ],
+            [
+              72,
+              233
+            ],
+            [
+              72,
+              284
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": -0.4
+          }
+        },
+        "stakes": {
+          "card_rect": {
+            "height": 722.8,
+            "width": 362,
+            "x": 14,
+            "y": 523.6
+          },
+          "click_pinned": true,
+          "hotspot_count": 8,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_stakes.png",
+          "targets_canvas_xy": [
+            [
+              195.0,
+              240.7
+            ],
+            [
+              195.0,
+              135.3
+            ],
+            [
+              277.4,
+              175.0
+            ],
+            [
+              297.8,
+              264.2
+            ],
+            [
+              240.7,
+              335.7
+            ],
+            [
+              149.3,
+              335.7
+            ],
+            [
+              92.2,
+              264.2
+            ],
+            [
+              112.6,
+              175.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": 0.3
+          }
+        },
+        "windtunnel": {
+          "card_rect": {
+            "height": 961.4,
+            "width": 362,
+            "x": 14,
+            "y": 523.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 9,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/mobile390_windtunnel.png",
+          "targets_canvas_xy": [
+            [
+              81.3,
+              140.0
+            ],
+            [
+              193.0,
+              140.0
+            ],
+            [
+              304.7,
+              140.0
+            ],
+            [
+              81.3,
+              206.0
+            ],
+            [
+              193.0,
+              206.0
+            ],
+            [
+              304.7,
+              206.0
+            ],
+            [
+              81.3,
+              272.0
+            ],
+            [
+              193.0,
+              272.0
+            ],
+            [
+              304.7,
+              272.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 523.3,
+            "width": 390,
+            "x": 0,
+            "y": 0.1
+          }
+        }
+      },
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    },
+    "wide1920": {
+      "canvas_count": 12,
+      "console_errors": [],
+      "controls": {
+        "challenge_button_cases": 3,
+        "challenge_buttons": true,
+        "frontier_control_cases": 10,
+        "frontier_controls": true,
+        "phase_control_cases": 15,
+        "phase_controls": true
+      },
+      "page_errors": [],
+      "scenes": {
+        "abstain": {
+          "card_rect": {
+            "height": 795.6,
+            "width": 470,
+            "x": 112,
+            "y": 184.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 2,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_abstain.png",
+          "targets_canvas_xy": [
+            [
+              1029.7,
+              317.7
+            ],
+            [
+              1485.4,
+              350.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "ask": {
+          "card_rect": {
+            "height": 852.4,
+            "width": 620,
+            "x": 112,
+            "y": 206
+          },
+          "click_pinned": true,
+          "hotspot_count": 3,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_ask.png",
+          "targets_canvas_xy": [
+            [
+              1323.0,
+              181.0
+            ],
+            [
+              1323.0,
+              263.0
+            ],
+            [
+              1323.0,
+              345.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "blindspot": {
+          "card_rect": {
+            "height": 818.8,
+            "width": 470,
+            "x": 1326,
+            "y": 184.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 3,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_blindspot.png",
+          "targets_canvas_xy": [
+            [
+              669.0,
+              181.0
+            ],
+            [
+              669.0,
+              283.0
+            ],
+            [
+              669.0,
+              385.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "challenge": {
+          "card_rect": {
+            "height": 852.4,
+            "width": 470,
+            "x": 112,
+            "y": 184.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_challenge.png",
+          "targets_canvas_xy": [
+            [
+              646.0,
+              334.8
+            ],
+            [
+              950.5,
+              334.8
+            ],
+            [
+              1255.0,
+              334.8
+            ],
+            [
+              1559.5,
+              334.8
+            ],
+            [
+              1864.0,
+              334.8
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "frontier": {
+          "card_rect": {
+            "height": 787.7,
+            "width": 470,
+            "x": 1326,
+            "y": 152
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_frontier.png",
+          "targets_canvas_xy": [
+            [
+              676.8,
+              360.2
+            ],
+            [
+              709.9,
+              407.2
+            ],
+            [
+              743.0,
+              375.1
+            ],
+            [
+              842.3,
+              355.6
+            ],
+            [
+              1041.0,
+              423.9
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "genome": {
+          "card_rect": {
+            "height": 810.7,
+            "width": 470,
+            "x": 112,
+            "y": 184.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 5,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_genome.png",
+          "targets_canvas_xy": [
+            [
+              1360.5,
+              161.0
+            ],
+            [
+              1360.5,
+              215.0
+            ],
+            [
+              1360.5,
+              269.0
+            ],
+            [
+              1360.5,
+              323.0
+            ],
+            [
+              1360.5,
+              377.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "hero": {
+          "card_rect": {
+            "height": 852.4,
+            "width": 620,
+            "x": 112,
+            "y": 206
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_hero.png",
+          "targets_canvas_xy": [
+            [
+              1326.0,
+              543.2
+            ],
+            [
+              1123.6,
+              460.4
+            ],
+            [
+              1528.4,
+              488.0
+            ],
+            [
+              1353.6,
+              699.6
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "ladder": {
+          "card_rect": {
+            "height": 852.4,
+            "width": 470,
+            "x": 1326,
+            "y": 184.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_ladder.png",
+          "targets_canvas_xy": [
+            [
+              630.0,
+              439.0
+            ],
+            [
+              653.0,
+              355.0
+            ],
+            [
+              676.0,
+              271.0
+            ],
+            [
+              699.0,
+              187.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "phase": {
+          "card_rect": {
+            "height": 853.0,
+            "width": 470,
+            "x": 112,
+            "y": 152
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_phase.png",
+          "targets_canvas_xy": [
+            [
+              1245.0,
+              210
+            ],
+            [
+              1245.0,
+              262
+            ],
+            [
+              1245.0,
+              314
+            ],
+            [
+              1223.5,
+              490.8
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "rejection": {
+          "card_rect": {
+            "height": 740.7,
+            "width": 470,
+            "x": 1326,
+            "y": 184.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 4,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_rejection.png",
+          "targets_canvas_xy": [
+            [
+              72,
+              213.4
+            ],
+            [
+              72,
+              264.4
+            ],
+            [
+              72,
+              315.4
+            ],
+            [
+              72,
+              366.4
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "stakes": {
+          "card_rect": {
+            "height": 717.8,
+            "width": 470,
+            "x": 112,
+            "y": 184.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 8,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_stakes.png",
+          "targets_canvas_xy": [
+            [
+              1251.0,
+              464.4
+            ],
+            [
+              1251.0,
+              205.2
+            ],
+            [
+              1453.7,
+              302.8
+            ],
+            [
+              1503.7,
+              522.1
+            ],
+            [
+              1363.5,
+              697.9
+            ],
+            [
+              1138.5,
+              697.9
+            ],
+            [
+              998.3,
+              522.1
+            ],
+            [
+              1048.3,
+              302.8
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        },
+        "windtunnel": {
+          "card_rect": {
+            "height": 795.6,
+            "width": 560,
+            "x": 112,
+            "y": 184.4
+          },
+          "click_pinned": true,
+          "hotspot_count": 9,
+          "hover_disclosed": true,
+          "screenshot": "qa/scenes/wide1920_windtunnel.png",
+          "targets_canvas_xy": [
+            [
+              951.0,
+              160.0
+            ],
+            [
+              1294.0,
+              160.0
+            ],
+            [
+              1637.0,
+              160.0
+            ],
+            [
+              951.0,
+              272.0
+            ],
+            [
+              1294.0,
+              272.0
+            ],
+            [
+              1637.0,
+              272.0
+            ],
+            [
+              951.0,
+              384.0
+            ],
+            [
+              1294.0,
+              384.0
+            ],
+            [
+              1637.0,
+              384.0
+            ]
+          ],
+          "visual_rect": {
+            "height": 1080,
+            "width": 1920,
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "viewport": {
+        "height": 1080,
+        "width": 1920
+      }
+    }
+  }
+}

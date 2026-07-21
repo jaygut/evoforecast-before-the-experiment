@@ -2,7 +2,7 @@
 
 Status: **release-ready as a dated, offline synthetic communication artifact that
 works from a file:// double-click**
-Date: 20 July 2026
+Date: 21 July 2026
 
 Successor to `evoforecast-graph-of-life-scrollytelling-20260720T180057Z`, which is
 preserved unchanged. This version rebuilds the narrative into a twelve-beat
@@ -66,6 +66,13 @@ the embedded bundle, interactions update, and there are zero console and page er
 - Accessibility basics: passed (one h1, ordered h2, skip link, labelled controls,
   slider aria-valuetext, canvases aria-hidden). The companion note is now a single h1.
 - Desktop, mobile 390 px, reduced-motion, and no-JavaScript reading paths: passed.
+- Exhaustive scene interaction at 1280×900, 1920×1080, and 390×844: passed.
+  The harness exercised 167 scene hotspots and 84 discrete DOM-control cases,
+  with hover disclosure, click pinning, 12 canvases, and zero console or page errors
+  at every width.
+- Manual visual inspection: all 36 current scene captures, both DOCX pages, and all
+  three technical-note pages inspected. Compact blindspot, wind-tunnel, ladder, and
+  genome defects were corrected before the final browser pass.
 - Three-page A4 technical note: regenerated from the corrected, voice-compliant HTML.
 - Independent adversarial review (scientific, communication, fresh-reader, voice and
   accessibility): completed; findings triaged and dispositioned in
@@ -89,6 +96,5 @@ measurement budget, and one held-out challenge, rehearsed in the wind tunnel fir
 then executed as the smallest real round that can estimate calibration and forecast
 accuracy under an independent reveal.
 
-EvoForecast does not promise that evolution is predictable. It shows what a real
-experiment would have to measure to find out, and it reports plainly when a design is
-not ready.
+EvoForecast makes a narrower claim. It shows what a real experiment must measure to
+test evolutionary forecasts, and it reports clearly when the evidence says to wait.

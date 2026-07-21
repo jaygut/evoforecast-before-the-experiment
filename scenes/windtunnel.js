@@ -2,7 +2,7 @@
   "use strict";
   var STAGES = [
     { n: "01", k: "PARAMETERS", s: "Registered design and priors, frozen before any run.", rel: "the registered design", hid: "nothing yet" },
-    { n: "02", k: "SLiM 5.2", s: "The registered engine for this round builds a world whose true answer exists by construction. The harness is engine-agnostic and other simulators are under evaluation.", rel: "engine version and seed roles", hid: "the true trajectory" },
+    { n: "02", k: "REGISTERED ENGINE", s: "The registered engine for this round builds a world whose true answer exists by construction. The harness is engine-agnostic and other simulators are under evaluation.", rel: "engine version and seed roles", hid: "the true trajectory" },
     { n: "03", k: "LATENT WORLD", s: "Ground truth is recorded in full, then sealed.", rel: "nothing", hid: "every latent state" },
     { n: "04", k: "OBSERVATION", s: "Only what a real study could actually measure is released.", rel: "noisy observations at registered horizons", hid: "the latent truth" },
     { n: "05", k: "FORECAST", s: "Competing measurement designs predict the held-out targets.", rel: "the released observations", hid: "the answer" },
@@ -11,6 +11,10 @@
     { n: "08", k: "SCORE", s: "Proper scoring against ground truth, on rules frozen in advance.", rel: "scores and calibration", hid: "nothing" },
     { n: "09", k: "DECIDE", s: "Learning, cost and failure compared, then scale or redesign.", rel: "the verdict", hid: "nothing" }
   ];
+  function engineName(d, s) {
+    var row = d.fact(s, "EF-013"), match = row && row.text.match(/SLiM \d+(?:\.\d+)?/);
+    return match ? match[0] : "REGISTERED ENGINE";
+  }
 
   window.EVO_SCENES.register("windtunnel", function (p, t, s, d, local) {
     local = local || {};
@@ -22,9 +26,9 @@
     // Cap the grid and centre it in the free band so it never overruns wide screens.
     var avail = gx1 - gx0, gw = Math.min(avail, 1020);
     gx0 = gx0 + (avail - gw) / 2; gx1 = gx0 + gw;
-    var gap = 9, cols = 3;
-    var w = Math.max(96, (gx1 - gx0 - gap * (cols - 1)) / cols), h = 56;
-    var top = 132, rowGap = 56;
+    var gap = 9, cols = 3, compact = p.height < 650;
+    var w = Math.max(96, (gx1 - gx0 - gap * (cols - 1)) / cols), h = compact ? 44 : 56;
+    var top = compact ? 118 : 132, rowGap = compact ? 22 : 56;
 
     var i, row, col, x, y, hovered = -1, boxes = [];
     for (i = 0; i < STAGES.length; i += 1) {
@@ -49,15 +53,15 @@
     if (p.drawingContext.setLineDash) { p.drawingContext.setLineDash([6, 5]); }
     p.line(gx0, by, gx1, by);
     if (p.drawingContext.setLineDash) { p.drawingContext.setLineDash([]); }
-    d.label(p, "BLIND BOUNDARY · PREDICTIONS ARE DEPOSITED ABOVE THIS LINE", (gx0 + gx1) / 2, by - 11, { color: "#E8694D", size: 11, align: p.CENTER });
+    d.label(p, compact ? "BLIND BOUNDARY · DEPOSIT ABOVE / REVEAL BELOW" : "BLIND BOUNDARY · PREDICTIONS ARE DEPOSITED ABOVE THIS LINE", (gx0 + gx1) / 2, compact ? by + 10 : by - 8, { color: "#E8694D", size: compact ? 7.5 : 11, align: p.CENTER });
 
-    var reveal = d.fade(t, 0, 0.85);
+    var reveal = compact ? 1 : d.fade(t, 0, 0.85);
     for (i = 0; i < STAGES.length; i += 1) {
       if (i >= STAGES.length * reveal + 0.001 && reveal < 1) { continue; }
       var b = boxes[i], lit = (show === i);
       var edge = i === 1 ? "#3AD6A3" : (i >= 6 ? "#1AA89B" : "#1AA89B");
       d.panel(p, b.x, b.y, b.w, b.h, lit ? "rgba(26,168,155,.20)" : "rgba(14,42,71,.94)", lit ? "#F7F6F2" : edge);
-      d.lineLabel(p, STAGES[i].n + " · " + STAGES[i].k, b.x + 11, b.y + 22, lit ? "#F7F6F2" : (i === 1 ? "#3AD6A3" : "#EAF1F1"));
+      d.label(p, STAGES[i].n + " · " + (i === 1 ? engineName(d, s) : STAGES[i].k), b.x + 11, b.y + (compact ? 19 : 22), { color: lit ? "#F7F6F2" : (i === 1 ? "#3AD6A3" : "#EAF1F1"), size: compact ? 8.5 : 11 });
       if (i % 3 < 2) { p.stroke("#1AA89B"); p.strokeWeight(1); p.line(b.x + b.w, b.y + b.h / 2, b.x + b.w + gap, b.y + b.h / 2); }
     }
 
@@ -67,18 +71,18 @@
       if (show >= 0) {
         var st = STAGES[show];
         d.panel(p, gx0, py0, gx1 - gx0, ph, "rgba(6,20,31,.94)", "#1AA89B");
-        d.lineLabel(p, st.n + " · " + st.k, gx0 + 12, py0 + 20, "#F7F6F2");
-        d.wrap(p, st.s, gx0 + 12, py0 + 28, gx1 - gx0 - 24, 26, { color: "#EAF1F1", size: 11.5 });
-        d.lineLabel(p, "RELEASED: " + st.rel, gx0 + 12, py0 + 60, "#3AD6A3");
-        d.lineLabel(p, "HIDDEN: " + st.hid, gx0 + 12, py0 + 74, "#E8694D");
+        d.label(p, st.n + " · " + (show === 1 ? engineName(d, s) : st.k), gx0 + 12, py0 + 20, { color: "#F7F6F2", size: compact ? 8.5 : 11 });
+        d.wrap(p, st.s, gx0 + 12, py0 + 27, gx1 - gx0 - 24, compact ? 30 : 26, { color: "#EAF1F1", size: compact ? 8.5 : 11.5 });
+        d.label(p, "RELEASED: " + st.rel, gx0 + 12, py0 + 62, { color: "#3AD6A3", size: compact ? 8 : 11 });
+        d.label(p, "HIDDEN: " + st.hid, gx0 + 12, py0 + 76, { color: "#E8694D", size: compact ? 8 : 11 });
       } else {
         d.panel(p, gx0, py0, gx1 - gx0, ph, "rgba(6,20,31,.55)", "rgba(26,168,155,.4)");
-        d.lineLabel(p, "HOVER A STAGE TO SEE WHAT IT RELEASES AND WHAT IT HIDES", gx0 + 12, py0 + 24, "rgba(234,241,241,.55)");
-        d.lineLabel(p, "The truth exists from stage 03. It stays sealed until stage 07.", gx0 + 12, py0 + 46, "rgba(159,180,189,.8)");
+        d.wrap(p, "HOVER OR CLICK A STAGE TO SEE WHAT IT RELEASES AND WHAT IT HIDES", gx0 + 12, py0 + 15, gx1 - gx0 - 24, 28, { color: "rgba(234,241,241,.55)", mono: true, size: compact ? 8 : 10 });
+        d.wrap(p, "The truth exists from stage 03. It stays sealed until stage 07.", gx0 + 12, py0 + 47, gx1 - gx0 - 24, 24, { color: "rgba(159,180,189,.8)", size: compact ? 9 : 11 });
       }
     }
 
     d.lineLabel(p, "PYTHON ORCHESTRATES / RELEASES / SCORES", gx0, p.height - 60, "#E9E1CC");
-    d.caveat(p, "SLiM 5.2 IS THE REGISTERED ENGINE THIS ROUND · HARNESS IS ENGINE-AGNOSTIC · EF-013");
+    d.caveat(p, engineName(d, s).toUpperCase() + " IS THE REGISTERED ENGINE THIS ROUND · HARNESS IS ENGINE-AGNOSTIC · EF-013");
   });
 }());

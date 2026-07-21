@@ -184,7 +184,7 @@
       "verification_status": "computationally verified from hash-bound source"
     },
     {
-      "allowed_wording": "user-supplied external context",
+      "allowed_wording": "illustrative external context",
       "claim_id": "EF-014",
       "denominator": "external context only",
       "forbidden_wording": "a committed or endorsed programme budget",
@@ -192,7 +192,7 @@
       "snapshot_date": "2026-07-20",
       "source_id": "WIND_TUNNEL_BRIEF",
       "status": "external",
-      "text": "An illustrative large-programme budget on the order of tens of millions of pounds, used as external context only, not a committed budget or an engine recommendation.",
+      "text": "An illustrative large-programme budget on the order of tens of millions of US dollars, used as external context only, not a committed budget or an engine recommendation.",
       "uncertainty_or_missingness": "No authoritative budget source is embedded in this bundle.",
       "units": "programme scale",
       "verification_status": "computationally verified from hash-bound source"

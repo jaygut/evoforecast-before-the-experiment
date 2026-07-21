@@ -19,15 +19,17 @@
     } else { x0 = 30; x1 = p.width - 30; }
     if (x1 - x0 < 240) { x0 = 30; x1 = p.width - 30; }
     var w = Math.min(x1 - x0, 520), cw = w, cx0 = x0 + (x1 - x0 - w) / 2;
-    var top = 150, ch = 62, gap = 20, i, y, hov = -1;
+    var compact = p.height < 650, top = compact ? 132 : 150, ch = compact ? 72 : 62, gap = compact ? 12 : 20, i, y, hov = -1, pinned = -1;
 
     for (i = 0; i < ITEMS.length; i += 1) {
       y = top + i * (ch + gap);
       if (local.hasPointer && local.mx >= cx0 && local.mx <= cx0 + cw && local.my >= y && local.my <= y + ch) { hov = i; }
+      if (local.clickX >= cx0 && local.clickX <= cx0 + cw && local.clickY >= y && local.clickY <= y + ch) { pinned = i; }
     }
+    var show = hov >= 0 ? hov : pinned;
     for (i = 0; i < ITEMS.length; i += 1) {
       y = top + i * (ch + gap);
-      var lit = hov === i, appear = d.fade(t, 0.05 + i * 0.12, 0.4 + i * 0.12);
+      var lit = show === i, appear = d.fade(t, 0.05 + i * 0.12, 0.4 + i * 0.12);
       if (appear < 0.02) { continue; }
       d.panel(p, cx0, y, cw, ch, lit ? "rgba(26,168,155,.20)" : "rgba(14,42,71,.94)", lit ? "#F7F6F2" : (i === 2 ? "#3AD6A3" : "#1AA89B"));
       d.lineLabel(p, ITEMS[i].n, cx0 + 16, y + 26, i === 2 ? "#3AD6A3" : "#1AA89B");
@@ -37,15 +39,14 @@
     }
 
     var oy = top + 3 * (ch + gap) + 8;
-    if (oy + 70 < p.height - 46) {
+    if (oy + 80 < p.height - 46) {
       p.noFill(); p.stroke("#3AD6A3"); p.strokeWeight(1.4);
       if (p.drawingContext.setLineDash) { p.drawingContext.setLineDash([5, 4]); }
-      p.rect(cx0, oy, cw, 62, 8);
+      p.rect(cx0, oy, cw, 76, 8);
       if (p.drawingContext.setLineDash) { p.drawingContext.setLineDash([]); }
-      d.lineLabel(p, "THEN REHEARSE IT, THEN RUN THE SMALLEST REAL ROUND", cx0 + 16, oy + 26, "#3AD6A3");
-      d.lineLabel(p, "that can estimate calibration under an independent reveal.", cx0 + 16, oy + 46, "#9FB4BD");
+      d.wrap(p, "THEN REHEARSE IT. THEN RUN THE SMALLEST REAL ROUND THAT CAN ESTIMATE CALIBRATION UNDER AN INDEPENDENT REVEAL.", cx0 + 16, oy + 12, cw - 32, 54, { color: "#3AD6A3", mono: true, size: 9.5 });
     }
-    if (hov < 0) { d.lineLabel(p, "HOVER AN INPUT", cx0, top - 16, "rgba(234,241,241,.42)"); }
+    if (show < 0) { d.lineLabel(p, "HOVER OR CLICK AN INPUT", cx0, top - 16, "rgba(234,241,241,.42)"); }
     d.caveat(p, "PROPOSED BOUNDED CO-DESIGN · EMPIRICAL QUALIFICATION REMAINS BLOCKED");
   });
 }());

@@ -1,4 +1,5 @@
 {
+  "target": "local index.html via file protocol",
   "console_errors": [],
   "page_errors": [],
   "evo_data_present": true,
@@ -6,8 +7,8 @@
   "section_count": 12,
   "load_status": "Evidence loaded from the embedded bundle \u00b7 17 registered claims \u00b7 lookup only",
   "html_class": "js",
-  "phase_before": "BLIND V5 \u00b7 GENOME + PHENOME \u00b7 16 populations \u00b7 day 60 \u00b7 single-cell lookup \u00b7 combined-test probability 22% \u00b7 accuracy gain 17.1% \u00b7 coverage 79.9%",
-  "phase_after_P1": "BLIND V5 \u00b7 PEDIGREE \u00b7 16 populations \u00b7 day 60 \u00b7 single-cell lookup \u00b7 combined-test probability 7% \u00b7 accuracy gain 9.2% \u00b7 coverage 71.7%",
+  "phase_before": "BLIND V5 \u00b7 GENOME + PHENOME \u00b7 16 populations \u00b7 day 60 \u00b7 single-cell lookup \u00b7 combined-test probability 21.6% \u00b7 accuracy gain 17.1% \u00b7 coverage 79.9%",
+  "phase_after_P1": "BLIND V5 \u00b7 PEDIGREE \u00b7 16 populations \u00b7 day 60 \u00b7 single-cell lookup \u00b7 combined-test probability 6.6% \u00b7 accuracy gain 9.2% \u00b7 coverage 71.7%",
   "challenge_after_adverse": "Adverse control \u00b7 -9.2% \u00b7 Matched control with the signal removed",
   "verdict": "PASS"
 }
