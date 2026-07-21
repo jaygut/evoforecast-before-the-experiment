@@ -10,7 +10,7 @@ spine, adds a dedicated V4-rejection beat, and fixes a critical offline defect.
 
 ## Value proposition
 
-Before anyone commits tens of millions of pounds to a dataset built to predict evolution, EvoForecast
+Before anyone commits tens of millions of dollars to a dataset built to predict evolution, EvoForecast
 can tell you whether the experiment is even winnable. In a fully synthetic world where the true
 outcome is known by construction, competing forecasters are scored blind, and the instrument
 reports whether rival designs can be told apart, which measurements buy identifiability rather

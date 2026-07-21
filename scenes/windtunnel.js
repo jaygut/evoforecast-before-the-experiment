@@ -2,7 +2,7 @@
   "use strict";
   var STAGES = [
     { n: "01", k: "PARAMETERS", s: "Registered design and priors, frozen before any run.", rel: "the registered design", hid: "nothing yet" },
-    { n: "02", k: "SLiM 5.2", s: "The sole biological engine builds a world whose true answer exists by construction.", rel: "engine version and seed roles", hid: "the true trajectory" },
+    { n: "02", k: "SLiM 5.2", s: "The registered engine for this round builds a world whose true answer exists by construction. The harness is engine-agnostic and other simulators are under evaluation.", rel: "engine version and seed roles", hid: "the true trajectory" },
     { n: "03", k: "LATENT WORLD", s: "Ground truth is recorded in full, then sealed.", rel: "nothing", hid: "every latent state" },
     { n: "04", k: "OBSERVATION", s: "Only what a real study could actually measure is released.", rel: "noisy observations at registered horizons", hid: "the latent truth" },
     { n: "05", k: "FORECAST", s: "Competing measurement designs predict the held-out targets.", rel: "the released observations", hid: "the answer" },
@@ -19,9 +19,12 @@
     var gx0 = (p.width > 800 && band) ? band.right + 30 : 30;
     var gx1 = p.width - 34;
     if (gx1 - gx0 < 280) { gx0 = 24; gx1 = p.width - 24; }
+    // Cap the grid and centre it in the free band so it never overruns wide screens.
+    var avail = gx1 - gx0, gw = Math.min(avail, 1020);
+    gx0 = gx0 + (avail - gw) / 2; gx1 = gx0 + gw;
     var gap = 9, cols = 3;
     var w = Math.max(96, (gx1 - gx0 - gap * (cols - 1)) / cols), h = 56;
-    var top = 132, rowGap = 46;
+    var top = 132, rowGap = 56;
 
     var i, row, col, x, y, hovered = -1, boxes = [];
     for (i = 0; i < STAGES.length; i += 1) {
@@ -40,12 +43,13 @@
     var show = hovered >= 0 ? hovered : pinned;
 
     // The blind boundary: everything above is done without seeing the answer.
-    var by = top + 2 * (h + rowGap) - rowGap / 2 - 2;
+    // Sits exactly midway between the deposit row and the reveal row.
+    var by = top + 2 * (h + rowGap) - rowGap / 2;
     p.stroke("#E8694D"); p.strokeWeight(1.4);
     if (p.drawingContext.setLineDash) { p.drawingContext.setLineDash([6, 5]); }
     p.line(gx0, by, gx1, by);
     if (p.drawingContext.setLineDash) { p.drawingContext.setLineDash([]); }
-    d.lineLabel(p, "BLIND BOUNDARY · PREDICTIONS ARE DEPOSITED ABOVE THIS LINE", gx0, by - 11, "#E8694D");
+    d.label(p, "BLIND BOUNDARY · PREDICTIONS ARE DEPOSITED ABOVE THIS LINE", (gx0 + gx1) / 2, by - 11, { color: "#E8694D", size: 11, align: p.CENTER });
 
     var reveal = d.fade(t, 0, 0.85);
     for (i = 0; i < STAGES.length; i += 1) {
@@ -75,6 +79,6 @@
     }
 
     d.lineLabel(p, "PYTHON ORCHESTRATES / RELEASES / SCORES", gx0, p.height - 60, "#E9E1CC");
-    d.caveat(p, "SLiM IS THE SOLE BIOLOGICAL TRAJECTORY ENGINE · CLAIM EF-013");
+    d.caveat(p, "SLiM 5.2 IS THE REGISTERED ENGINE THIS ROUND · HARNESS IS ENGINE-AGNOSTIC · EF-013");
   });
 }());

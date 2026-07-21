@@ -170,7 +170,7 @@
       "verification_status": "computationally verified from hash-bound source"
     },
     {
-      "allowed_wording": "registered software boundary",
+      "allowed_wording": "registered software boundary for this round",
       "claim_id": "EF-013",
       "denominator": "not applicable",
       "forbidden_wording": "Python simulates the biological reference world",
@@ -178,7 +178,7 @@
       "snapshot_date": "2026-07-20",
       "source_id": "GT01_PRD",
       "status": "synthetic",
-      "text": "SLiM 5.2 is the sole biological trajectory engine; Python orchestrates, exports, and scores.",
+      "text": "SLiM 5.2 is the registered biological trajectory engine for this round; Python orchestrates, exports, and scores.",
       "uncertainty_or_missingness": "This site performs lookup only and contains no simulator.",
       "units": "engine boundary",
       "verification_status": "computationally verified from hash-bound source"

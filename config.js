@@ -15,30 +15,30 @@
     scenes: [
       {
         id: "hero", number: "01", eyebrow: "BEFORE THE EXPERIMENT · SYNTHETIC EVIDENCE · 20 JUL 2026",
-        title: "Before you commit tens of millions of pounds to predict evolution, find out whether the experiment can teach you enough.",
-        body: "A research director deciding whether to fund a large evolution experiment faces a question money cannot answer after the fact. Will the experiment actually separate a good forecast from a lucky guess, or will it cost a fortune and end in the same uncertainty it started with? EvoForecast answers that question first, in software, by rehearsing the whole experiment in a synthetic world where the true outcome is already known.",
+        title: "Before you commit tens of millions of dollars to predict evolution, find out whether the experiment can teach you enough.",
+        body: "A director deciding whether to fund a large evolution experiment faces a question money cannot answer afterwards. Will the experiment separate a good forecast from a lucky guess, or will it cost a fortune and end in the uncertainty it started with? EvoForecast settles that first, in software, by running the whole experiment in a synthetic world where the true outcome is already known.",
         proof: "5,600 OF 5,600 SIMULATED RUNS COMPLETED · NO DESIGN CLEARED THE BAR BEFORE THE OUTCOME WAS REVEALED",
         claim: "EF-001 · EF-002 · EF-003", badge: "SYNTHETIC SOFTWARE EVIDENCE"
       },
       {
         id: "stakes", number: "02", eyebrow: "THE COSTLY FAILURE · EXTERNAL CONTEXT",
         title: "A programme can spend more and still not tell two forecasts apart.",
-        body: "Every large evolution experiment locks in choices that are hard to reverse. Which species. How many generations. How many independent populations. How much starting diversity. Which conditions, which measurements, how much automation. Spend more on any of these and you can still end up unable to say whether one model predicted better than another. Worse than a wrong answer is an experiment that cannot tell two answers apart. That is the failure worth spending to avoid.",
-        proof: "A MAJOR PROGRAMME · TENS OF MILLIONS OF POUNDS · ILLUSTRATIVE, NOT A COMMITTED BUDGET",
+        body: "Every large evolution experiment locks in choices that are hard to reverse. Which species. How many generations. How many independent populations. How much starting diversity. Which conditions, which measurements, how much automation. Spend more on any of them and you can still be unable to say whether one model predicted better than another. Worse than a wrong answer is an experiment that cannot tell two answers apart. That is the failure worth paying to avoid.",
+        proof: "A MAJOR PROGRAMME · TENS OF MILLIONS USD · ILLUSTRATIVE, NOT A COMMITTED BUDGET",
         claim: "EF-014", badge: "EXTERNAL CONTEXT"
       },
       {
         id: "blindspot", number: "03", eyebrow: "WHY AVERAGES MISLEAD · PROSPECTIVE DISCIPLINE",
         title: "A better average can still hide a forecast that misses too often.",
-        body: "In the latest synthetic challenge the richest measurement package improved the average accuracy of its forecasts by 47.5 percent over the simplest baseline. The same package was wrong about its own uncertainty. Its ninety percent prediction range should have held the truth nine times in ten. It held it eight times in ten. A design that scores well on average can still fail the test that decides a programme, which is whether its stated confidence can be trusted before the outcome is known.",
+        body: "In the latest synthetic challenge the richest measurement package improved average forecast accuracy by 47.5 percent over the simplest baseline. The same package was wrong about its own uncertainty. Its ninety percent range should have held the truth nine times in ten. It held it eight. A design that scores well on average can still fail the test that decides a programme, which is whether its stated confidence survives contact with a held-out outcome.",
         proof: "+47.5% AVERAGE ACCURACY GAIN · 80% COVERAGE OF A 90% RANGE · 0 / 60 PROSPECTIVE CELLS PASSED",
         claim: "EF-003 · EF-007", badge: "SYNTHETIC · INDICATIVE"
       },
       {
         id: "windtunnel", number: "04", eyebrow: "THE REHEARSAL · AUDITABLE CHAIN",
         title: "Rehearse the whole experiment in a world where the answer is already known.",
-        body: "EvoForecast builds a synthetic population and evolves it with SLiM 5.2, the same forward-evolution engine used in population genetics. It records the true outcome, hides it, and releases only what a real study would measure. Competing forecasters deposit predictions before the answer is revealed. Then it scores them and lines up three things a real programme cares about. How much each design learns. What each design costs. How each design fails. Because the truth is known by construction, the rehearsal can show which measurements earn their place and which only add expense.",
-        proof: "DEFINE · SIMULATE WITH SLiM 5.2 · HIDE · FORECAST · REVEAL · SCORE · COMPARE LEARNING, COST, FAILURE",
+        body: "EvoForecast builds a synthetic population and evolves it with SLiM 5.2, the registered trajectory engine for this round. The harness is engine-agnostic and other evolutionary simulators are under evaluation. Ecological network dynamics are being developed in a population context, so eco-evolutionary feedback is represented rather than assumed away. The engine records the true outcome, hides it, and releases only what a real study could measure. Competing designs deposit forecasts before the answer is revealed. Then it scores them and lines up what a programme actually decides on. How much each design learns. What each costs. How each fails.",
+        proof: "DEFINE · SIMULATE (SLiM 5.2 THIS ROUND) · HIDE · FORECAST · REVEAL · SCORE · COMPARE LEARNING, COST, FAILURE",
         claim: "EF-013 · EF-002", badge: "REGISTERED ENGINE BOUNDARY"
       },
       {
@@ -86,7 +86,7 @@
       {
         id: "genome", number: "11", eyebrow: "WHAT A REAL EXPERIMENT MUST SHOW · PROPOSED / BLOCKED",
         title: "The hard part a real study still has to prove.",
-        body: "The proposed next design is diploid, ten-chromosome, sexual, and limited to standing variation. It would connect founder genomes through recombination to phenotype, ecology, the error an assay actually makes, and a blind score. None of it is built or calibrated. It marks the exact place where real material, real assays, and independent review would have to do the work software cannot.",
+        body: "The proposed next design is diploid, ten-chromosome, sexual, and limited to standing variation. It connects founder genomes through recombination to phenotype, ecology, the error an assay actually makes, and a blind score. Ecological network dynamics are being developed alongside it in a population context, so eco-evolutionary feedback is carried rather than assumed away. None of it is built or calibrated. It marks the exact place where real material, real assays, and independent review must do the work software cannot.",
         proof: "10 CHROMOSOMES · PROPOSED DESIGN · RC01 REMAINS CLONAL · NOT IMPLEMENTED",
         claim: "EF-012 · EF-015", badge: "PROPOSED · EMPIRICAL GATE BLOCKED"
       },
