@@ -1,0 +1,38 @@
+{
+  "voice_violations": [],
+  "banned_char_hits": [],
+  "remote_requests": [],
+  "a11y": {
+    "h1_count": 1,
+    "skip_link": true,
+    "unlabeled_controls": 0,
+    "canvases_aria_hidden": true,
+    "headings_order": [
+      "H1",
+      "H2",
+      "H2",
+      "H2",
+      "H2",
+      "H2",
+      "H2",
+      "H2",
+      "H2",
+      "H2",
+      "H2",
+      "H2"
+    ]
+  },
+  "screenshots": [
+    "v2_desktop_hero.png",
+    "v2_desktop_v5result.png",
+    "v2_desktop_rejection.png",
+    "v2_mobile_hero.png",
+    "v2_reduced_motion.png",
+    "v2_no_javascript.png"
+  ],
+  "verdict": "PASS",
+  "mobile_body_overflow": true,
+  "reduced_motion_canvas": 2,
+  "nojs_sections": 12,
+  "nojs_noscript_visible": true
+}

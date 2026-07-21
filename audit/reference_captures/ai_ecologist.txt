@@ -1,0 +1,294 @@
+Skip to the reconstruction
+AI Ecologist · structural ecological intelligence engine
+ANATOMY
+ATLAS
+WHAT WE CLAIM
+BRIEF
+START A PILOT
+ECOSYSTEM CONDITION, STRESS TESTED
+Every other reading takes a census. This one runs a stress test.
+
+Send the species inventory you already have. The engine reconstructs the interaction network behind it, then removes species one at a time and measures how much of the structure goes with them.
+
+0.948
+HELD-OUT LINK PREDICTION, 80 FOOD WEBS
+20
+RECONSTRUCTED REFERENCE ECOSYSTEMS, SIX CONTINENTS
+a species list
+THE ONLY DATA YOU SUPPLY
+Condition is now required. The metric was never defined.
+Everything else counts what is present.
+ILLUSTRATIVE VISUAL, MEASURED NUMBERS
+THE STAKES
+A cloud forest waters a city. Pollinators are the reason it can.
+
+A cloud forest above Medellin combs water out of fog and supplies up to 60% of the city's drinking water. What catches the fog is the load of mosses, bromeliads and orchids riding on the canopy. What sustains that load is the pollinators. Follow the chain and the city's water runs through the food web. Break it and the cost lands downstream.
+
+60%
+OF ONE CITY'S WATER
+4M
+PEOPLE DOWNSTREAM
+ILLUSTRATIVE, ONE REAL FIGURE
+WHAT 'CONDITION' MEANS
+Inventories everywhere. Decisions nowhere.
+
+Three ways to read an ecosystem: how much is there, what is present, and whether it holds. The rules now require the third, ecosystem condition, yet leave the metric undefined. A score can read healthy while the structure underneath comes apart.
+
+ILLUSTRATIVE
+THE RECONSTRUCTION
+From a list of names to the living network.
+
+From a 91 species inventory, the engine infers a web of 1,033 interactions, with no time series required. Tested on 80 published food webs, hiding a fifth of each web's interactions and rebuilding them, it recovers them at 0.948.
+
+91
+SPECIES
+1,033
+INTERACTIONS
+0.948
+HELD-OUT RECOVERY, 80 WEBS
+REAL DATA
+All classes
+91
+Nectar-feeders in core
+14
+High-centrality hubs
+9
+Connectors
+6
+Top-trophic
+9
+Producers
+16
+Background
+51
+STRUCTURAL INTEGRITY
+·
+EXPLORATORY
+·
+INFERRED
+57
+0 to 100, higher is sounder
+BBB · Investment grade
+A fully reconstructed structural reading, not a condition grade. Fragility alone would read this forest as prime. The composite does not let one strong dimension paper over weak ones. How well the web holds together and how cleanly it clusters both read fragile, so the grade stays pinned to the network's weakest dimension rather than smoothing it away.
+0 Critical
+30
+50
+70
+85
+100
+23
+Core depth
+how many layers deep the tightest core runs
+52
+Core taxa
+57% of the web
+25.2%
+Wiring density
+share of possible links that actually exist
+3
+Clusters
+how cleanly the web splits into groups
+0.78
+Cohesion
+how hard the web is to split apart
+46%
+Robustness
+share of key species you would have to remove before the web breaks apart
+1.12
+Fragility
+how much worse a smart attack is than random loss
+0.84
+Weakest axis
+the dimension keeping the score down
+PULL SPECIES OUT OF THE CORE. THE STRESS TEST, RUNNING ON THE RECONSTRUCTED NETWORK
+removed 0
+connected 100%
+knock-on losses 0
+A hypothesis, not a verdict. Computed on a network that is fully reconstructed, all 1,033 interactions inferred, none yet observed in the field. There is no observed interaction tier for the reconstruction gate to anchor on, so this is an exploratory structural reading.
+THE HIDDEN KEYSTONE
+The apex predator is not holding it up.
+Fourteen nectar-feeders sit at the very centre of the web, eleven of them hummingbirds. The puma sits further out.
+
+The sword-billed hummingbird sits at the very centre of the web. The apex predators, the puma and the black-and-chestnut eagle, sit a couple of layers further out. The species with the highest removal impact of all are the soil's recyclers, a dung beetle and the leaf-cutter ants. These are the species sustaining the canopy that catches the city's water, and on a conventional inventory every one of them is a line item among hundreds. Conservation aimed at the charismatic few can miss the structural foundation.
+
+THE INSTRUMENT SET
+One reconstruction. Four questions worth asking of it.
+
+A long list of network measures is mostly one number wearing different hats. Published work finds that twenty structural properties of a food web collapse into about three independent dimensions. So we group the readings by the question they answer rather than counting them, and we say which rest on published network science and which are our own.
+
+4
+INDEPENDENT QUESTIONS, NOT A METRIC COUNT
+published
+OR OURS, MARKED ON EVERY READING
+growing
+INSTRUMENTS ADDED AS THEY EARN IT
+CAPABILITY MAP
+REDUNDANCY
+how much slack the system carries
+Wiring density
+share of possible links that actually exist
+published
+Structural completeness
+whether the reconstruction is whole or in pieces
+ours
+CONCENTRATION
+how much rides on how few
+Core depth
+how many layers deep the tightest core runs
+published
+Load-bearing species
+a ranked shortlist of what holds it together
+ours
+Clusters and bridges
+the neighbourhoods, and who connects them
+published
+Weighted core
+core depth once link strength is counted
+ours, gated
+PROPAGATION
+whether a shock spreads or stays local
+Knock-on loss
+who loses their food supply entirely
+published
+Per-species stress test
+every species ranked by what its removal costs
+ours
+Clustering
+how cleanly the web splits into groups
+published
+Interaction patterns
+the recurring three-species shapes
+published, simplified
+STRESS RESPONSE
+what survives as species are removed
+Fragility
+how much worse a targeted loss is than random
+published
+Break point
+how much loss before the web splits in half
+published
+Food-chain order
+how neatly the system layers into levels
+published
+Cohesion
+how hard the web is to pull apart
+ours, no ecological benchmark
+
+Grouping by question is the honest way to present this. Counting measures would imply each adds independent information, and in this field most of them do not. Opt-in instruments go further: confidence intervals on every number, change between two states, restoration priority, and dynamic stability. Each carries the caveat it earned.
+
+CROSS-BIOME BENCHMARKING
+One ecosystem is a diagnosis. Twenty is a reference frame.
+
+The engine profiles the structural fingerprint of ecosystems across six continents, then measures which are built alike. Similarity here is structural, not a claim of shared species or shared risk.
+
+20
+REFERENCE ECOSYSTEMS
+6
+CONTINENTS
+reef to boreal
+BIOME SPAN
+REAL DATA
+CHANGE OVER TIME
+The system is changing shape.
+
+Compare two states of the same network and the engine reports what stayed the same, what was replaced, and how the central group of species shifted. On a published record it reproduced the whole-network change signal almost exactly. It quantifies change. It does not forecast it.
+
+0.99999
+MATCH TO A KNOWN CHANGE RECORD
+658
+TIME WINDOWS
+REAL METRIC, ILLUSTRATED MECHANISM
+INSIDE THE ENGINE
+Other readings count what is present. This one tests what the structure can lose.
+
+Take a species out of the reconstructed network and the engine measures what goes with it, counting how many others lose their food supply outright and how far the web fragments. That is a structural stress test on the network, not a forecast of what will happen in the field, and we mark the difference everywhere it matters. It runs on top of the inventories you already collect, not instead of them. Machine reasoning does one bounded job inside the reconstruction, and every call it makes is checked against ecological rules and against the shape of the network. The decision layer is deterministic and owned, so no outside model makes the call.
+
+every species
+RANKED BY WHAT ITS REMOVAL COSTS THE STRUCTURE
+deterministic
+SAME INPUTS, SAME ANSWER, EVERY TIME
+owned
+AUDITABLE AND REPRODUCIBLE
+HOW IT WORKS
+WHAT WE CLAIM
+Benchmarked where it counts. Prototype where it is not.
+
+Every interaction carries an evidence tier. The structural layer is benchmarked, deterministic, and reproducible, a condition reading built to survive an audit, not a score you have to trust. The financial layer is a screening prototype, and we never dress it up as calibrated.
+
+REAL LABELS
+● Restoration
+
+Which species the recovery has to be built around.
+
+● Watershed
+
+Secure water through the catchment's load-bearing species.
+
+● Conservation
+
+Protect the structural linchpins, not only the charismatic few.
+
+● Fisheries
+
+Find the linchpins of marine and freshwater webs.
+
+● Nature finance
+
+Structural inputs for disclosure screening.
+
+THE ASK
+Stop counting. Start diagnosing.
+
+One site, one decision question, one species list. You get back the reconstructed network, the species the structure is standing on, and what it loses if they go. Expert oversight throughout, and every claim carries its evidence tier.
+
+Pilot scan
+
+One site, one decision question, days not months, with expert oversight.
+
+Monitoring
+
+Recurring structural intelligence and change tracking across a portfolio.
+
+Managed access
+
+Inputs in, evidence out, through an interface you query. The engine stays owned.
+
+Partnership
+
+Back the vulnerability layer beneath the nature-intelligence stack.
+
+Start a pilot
+Read the full brief
+jg@graphoflife.com · biome-translator.emergent.host
+
+Built by Jay Gutierrez, PhD, working at the intersection of ecological network science, graph intelligence, nature-finance translation, and publishing the work that defines the structural-risk category.
+
+VERIFIED SNAPSHOT
+Reconstruction accuracy
+AUC 0.948
+80 webs held out, structure only; 0.945 on a second benchmark
+Flagship web
+91 species
+1,033 inferred interactions
+Core depth
+k 23
+52-species load-bearing core
+Structural integrity
+57 of 100
+tier BBB, exploratory
+Reference library
+20 ecosystems
+six continents, compared on structure
+Change signal
+0.99999
+across 658 windows
+Evidence status
+Inferred
+no observed tier yet
+Financial layer
+Prototype
+not market calibrated
+every figure verified against the engine, snapshot 2026-06-29
+CLAIM BOUNDARY
+Structural reconstruction and fragility, benchmarked and reproducible. Financial outputs are prototype, not calibrated.
+snapshot 2026-06-29

@@ -1,0 +1,7 @@
+# Visual-QA captures (regenerable, heavy) — not needed for the published page
+qa/scenes/
+qa/screenshots/
+# Python / OS cruft
+**/__pycache__/
+*.pyc
+.DS_Store

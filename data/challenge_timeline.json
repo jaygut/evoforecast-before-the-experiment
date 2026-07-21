@@ -1,0 +1,43 @@
+{
+  "events": [
+    {
+      "detail": "3,076 jobs · 12,304 endpoints",
+      "id": "rc01",
+      "label": "RC01 synthetic POC",
+      "state": "software proof"
+    },
+    {
+      "detail": "−9.2% genome-vs-pedigree CRPS gain",
+      "id": "v3_adverse",
+      "label": "Corrected adverse control",
+      "state": "failure exposed"
+    },
+    {
+      "detail": "+17.0% genome-vs-pedigree CRPS gain",
+      "id": "v3_positive",
+      "label": "Corrected favorable control",
+      "state": "positive control"
+    },
+    {
+      "detail": "5/80 indicative · 0/80 robust",
+      "id": "blind_v3",
+      "label": "Blind v3",
+      "state": "blind challenge"
+    },
+    {
+      "detail": "0/60 prospective indicative · 0/80 robust",
+      "id": "blind_v5",
+      "label": "Blind v5",
+      "state": "latest challenge"
+    }
+  ],
+  "schema_version": "evoforecast-scrolly-facts.local-v1",
+  "source_claim_ids": [
+    "EF-005",
+    "EF-009",
+    "EF-010",
+    "EF-011",
+    "EF-016",
+    "EF-017"
+  ]
+}

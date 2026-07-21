@@ -1,0 +1,286 @@
+[
+  {
+    "adverse_readout": "Adverse / OOD \u00b7 \u22129.2% \u00b7 Matched adverse software control",
+    "console_errors": [],
+    "fonts": {
+      "mono": true,
+      "sans": true,
+      "status": "loaded"
+    },
+    "frontier_readout": "Deep phenome \u00b7 day 60 \u00b7 highest membership 8% \u00b7 dominated or miscalibrated",
+    "horizontal_overflow_px": 0,
+    "label": "desktop",
+    "phase_readout": "BLIND V3 \u00b7 G1 \u00b7 16 populations \u00b7 day 60 \u00b7 gate probability 54% \u00b7 mean CRPS gain 18.1% \u00b7 coverage 86%",
+    "remote_requests": [],
+    "scenes": [
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": 0
+        },
+        "canvas": 1,
+        "id": "hero"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "stakes"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "blindspot"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "windtunnel"
+      },
+      {
+        "box": {
+          "height": 2250,
+          "width": 1440,
+          "x": 0,
+          "y": -675
+        },
+        "canvas": 1,
+        "id": "phase"
+      },
+      {
+        "box": {
+          "height": 2250,
+          "width": 1440,
+          "x": 0,
+          "y": -675
+        },
+        "canvas": 1,
+        "id": "frontier"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "challenge"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "genome"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "abstain"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "ladder"
+      },
+      {
+        "box": {
+          "height": 1980,
+          "width": 1440,
+          "x": 0,
+          "y": -540
+        },
+        "canvas": 1,
+        "id": "ask"
+      }
+    ],
+    "semantics": {
+      "boundary": true,
+      "caveats": 11,
+      "h1": 1,
+      "live": 5,
+      "main": 1,
+      "sections": 11,
+      "skip": true,
+      "sourcePills": 11
+    }
+  },
+  {
+    "adverse_readout": "Adverse / OOD \u00b7 \u22129.2% \u00b7 Matched adverse software control",
+    "console_errors": [],
+    "fonts": {
+      "mono": true,
+      "sans": true,
+      "status": "loaded"
+    },
+    "frontier_readout": "Deep phenome \u00b7 day 60 \u00b7 highest membership 8% \u00b7 dominated or miscalibrated",
+    "horizontal_overflow_px": 0,
+    "label": "mobile",
+    "phase_readout": "BLIND V3 \u00b7 G1 \u00b7 16 populations \u00b7 day 60 \u00b7 gate probability 54% \u00b7 mean CRPS gain 18.1% \u00b7 coverage 86%",
+    "remote_requests": [],
+    "scenes": [
+      {
+        "box": {
+          "height": 1170.515625,
+          "width": 390,
+          "x": 0,
+          "y": 0
+        },
+        "canvas": 1,
+        "id": "hero"
+      },
+      {
+        "box": {
+          "height": 1057.296875,
+          "width": 390,
+          "x": 0,
+          "y": -106.484375
+        },
+        "canvas": 1,
+        "id": "stakes"
+      },
+      {
+        "box": {
+          "height": 1057.296875,
+          "width": 390,
+          "x": 0,
+          "y": -106.1875
+        },
+        "canvas": 1,
+        "id": "blindspot"
+      },
+      {
+        "box": {
+          "height": 1039.90625,
+          "width": 390,
+          "x": 0,
+          "y": -97.890625
+        },
+        "canvas": 1,
+        "id": "windtunnel"
+      },
+      {
+        "box": {
+          "height": 1377.890625,
+          "width": 390,
+          "x": 0,
+          "y": -266.984375
+        },
+        "canvas": 1,
+        "id": "phase"
+      },
+      {
+        "box": {
+          "height": 1222.953125,
+          "width": 390,
+          "x": 0,
+          "y": -189.09375
+        },
+        "canvas": 1,
+        "id": "frontier"
+      },
+      {
+        "box": {
+          "height": 1241.296875,
+          "width": 390,
+          "x": 0,
+          "y": -199.140625
+        },
+        "canvas": 1,
+        "id": "challenge"
+      },
+      {
+        "box": {
+          "height": 1148.578125,
+          "width": 390,
+          "x": 0,
+          "y": -151.84375
+        },
+        "canvas": 1,
+        "id": "genome"
+      },
+      {
+        "box": {
+          "height": 1023.921875,
+          "width": 390,
+          "x": 0,
+          "y": -90.265625
+        },
+        "canvas": 1,
+        "id": "abstain"
+      },
+      {
+        "box": {
+          "height": 1294.5625,
+          "width": 390,
+          "x": 0,
+          "y": -225.34375
+        },
+        "canvas": 1,
+        "id": "ladder"
+      },
+      {
+        "box": {
+          "height": 1375.09375,
+          "width": 390,
+          "x": 0,
+          "y": -265.78125
+        },
+        "canvas": 1,
+        "id": "ask"
+      }
+    ],
+    "semantics": {
+      "boundary": true,
+      "caveats": 11,
+      "h1": 1,
+      "live": 5,
+      "main": 1,
+      "sections": 11,
+      "skip": true,
+      "sourcePills": 11
+    }
+  },
+  {
+    "label": "reduced_motion",
+    "scene_height": "780px",
+    "scroll_behavior": "auto"
+  },
+  {
+    "boundary_visible": true,
+    "label": "no_javascript",
+    "noscript_visible": true,
+    "scene_titles": 11,
+    "source_pills": 11
+  }
+]

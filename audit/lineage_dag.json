@@ -1,0 +1,238 @@
+{
+  "edges": [
+    {
+      "from": "ADVERSE_CONTROL",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "WIND_TUNNEL_BRIEF",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V3_FRONTIER",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V3_LADDER",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V3_PHASE",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V3_RUN",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V5_FRONTIER",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V5_LADDER",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V5_PHASE",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V5_RUN",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BRAND_SNAPSHOT",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "GT01_PRD",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "POSITIVE_CONTROL",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "PROMPT",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "RC01_ENDPOINTS",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "RC01_JOBS",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "RC01_SUMMARY",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "VOICE_SNAPSHOT",
+      "operation": "verified extraction",
+      "to": "facts_digest"
+    },
+    {
+      "from": "BLIND_V3_PHASE",
+      "operation": "field projection",
+      "to": "phase_cells"
+    },
+    {
+      "from": "BLIND_V5_PHASE",
+      "operation": "field projection",
+      "to": "phase_cells"
+    },
+    {
+      "from": "BLIND_V3_FRONTIER",
+      "operation": "field projection",
+      "to": "portfolio"
+    },
+    {
+      "from": "BLIND_V5_FRONTIER",
+      "operation": "field projection",
+      "to": "portfolio"
+    },
+    {
+      "from": "facts_digest",
+      "operation": "config-bound rendering",
+      "to": "site"
+    },
+    {
+      "from": "phase_cells",
+      "operation": "lookup-only rendering",
+      "to": "site"
+    },
+    {
+      "from": "portfolio",
+      "operation": "lookup-only rendering",
+      "to": "site"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ADVERSE_CONTROL",
+      "kind": "immutable_source",
+      "sha256": "f0354c1408d1d00a87590cacb25846508f7a328f114d6bca7c285be1a065914e"
+    },
+    {
+      "id": "WIND_TUNNEL_BRIEF",
+      "kind": "immutable_source",
+      "sha256": "8a9cc820ba9497d50694d8385429ccead3ff694f71d6f49aa0abd3ccff9e6fc4"
+    },
+    {
+      "id": "BLIND_V3_FRONTIER",
+      "kind": "immutable_source",
+      "sha256": "19654efb884078992a5b1f35015b8f9aade446964fab8c007d0aa02ccf8cd87b"
+    },
+    {
+      "id": "BLIND_V3_LADDER",
+      "kind": "immutable_source",
+      "sha256": "2500f2f4ab36db3a1e19a900e2ab91a0570f989e52d5a557a81ff71f38f3ad74"
+    },
+    {
+      "id": "BLIND_V3_PHASE",
+      "kind": "immutable_source",
+      "sha256": "a4bcbbdec74ec0bab94d935588d619bb3fe33aa2d47f7f5af180c4fd492830ed"
+    },
+    {
+      "id": "BLIND_V3_RUN",
+      "kind": "immutable_source",
+      "sha256": "5a6a36f16b4afc124e0c4e698b9f323b7e18d960c05c0f204c8bece4f513605e"
+    },
+    {
+      "id": "BLIND_V5_FRONTIER",
+      "kind": "immutable_source",
+      "sha256": "d3e612021378ca3e587c63145c238f6415df81fd639af5779ada1826e61c9b36"
+    },
+    {
+      "id": "BLIND_V5_LADDER",
+      "kind": "immutable_source",
+      "sha256": "cd87981a3c56a8569936a9cc47049037b7b2a334fb7f071cd3817989b3f6f3de"
+    },
+    {
+      "id": "BLIND_V5_PHASE",
+      "kind": "immutable_source",
+      "sha256": "a45c755f06db10e7ee982b5ec25ad204f5f105d63b4e11866d046894c1dc6088"
+    },
+    {
+      "id": "BLIND_V5_RUN",
+      "kind": "immutable_source",
+      "sha256": "b8e80d1bb852b774689ef4bf4750c32c358f4804fdcad144cf7af483e8c6f252"
+    },
+    {
+      "id": "BRAND_SNAPSHOT",
+      "kind": "immutable_source",
+      "sha256": "4f7ed8f3af048ae0ac620a0535c9b4a887111f6140deefa9da6767240ccac2e3"
+    },
+    {
+      "id": "GT01_PRD",
+      "kind": "immutable_source",
+      "sha256": "edeab3d86997e97cec429e73bfd622bc1a5780d1e4d5eac3412c3f426c08b979"
+    },
+    {
+      "id": "POSITIVE_CONTROL",
+      "kind": "immutable_source",
+      "sha256": "ae1587b6f23cd1bfa632c5e2376f28727d127da333489b570efab2e42f48fe4d"
+    },
+    {
+      "id": "PROMPT",
+      "kind": "immutable_source",
+      "sha256": "390928168f6f003125c71d484c1bfd31eb984d67a0b098baa43111289bfef28a"
+    },
+    {
+      "id": "RC01_ENDPOINTS",
+      "kind": "immutable_source",
+      "sha256": "02cbc0027e06ddd7e3fd370f41b965146177c78d86a98e38023b92fa5a1d937d"
+    },
+    {
+      "id": "RC01_JOBS",
+      "kind": "immutable_source",
+      "sha256": "b3a802732781edd112133164238774ac033571acf199a9d2b4e6406e1206dc2f"
+    },
+    {
+      "id": "RC01_SUMMARY",
+      "kind": "immutable_source",
+      "sha256": "4036a740b9c049c0dad33977b3593ea2a96184f827798fae7e34e48b402ea72e"
+    },
+    {
+      "id": "VOICE_SNAPSHOT",
+      "kind": "immutable_source",
+      "sha256": "1b067c7f4dd176559371adb2782c622eace2ab0cf25d1dfbca690ae5fee319c4"
+    },
+    {
+      "id": "facts_digest",
+      "kind": "derived_public_data"
+    },
+    {
+      "id": "phase_cells",
+      "kind": "derived_public_data"
+    },
+    {
+      "id": "portfolio",
+      "kind": "derived_public_data"
+    },
+    {
+      "id": "site",
+      "kind": "rendered_artifact"
+    }
+  ],
+  "schema_version": "evoforecast-scrolly-facts.local-v1"
+}

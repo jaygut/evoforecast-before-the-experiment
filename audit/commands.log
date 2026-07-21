@@ -1,0 +1,13 @@
+2026-07-20T18:00:57Z  READ  governing repository contracts, PRD, execution prompts, evidence reports, tables, manifests, and canonical brand/voice snapshots
+2026-07-20T18:00:57Z  HASH  required inputs with SHA-256
+2026-07-20T18:00:57Z  COPY  minimum immutable PDFs/SVGs and approved local p5/font dependencies; source bytes preserved
+2026-07-20T18:00:57Z  EXPORT  python3 tools/export_static_facts.py --repo "$REPO" --evidence-root "$EVIDENCE_ROOT" --rc01-root "$RC01_ROOT"
+2026-07-20T18:00:57Z  SERVE  python3 -m http.server 8877 --bind 127.0.0.1
+2026-07-20T18:00:57Z  CAPTURE  python3 tools/capture_references.py
+2026-07-20T18:00:57Z  VALIDATE  python3 tools/validate_bundle.py --repo "$REPO" --evidence-root "$EVIDENCE_ROOT" --rc01-root "$RC01_ROOT"
+2026-07-20T18:00:57Z  LEAK  sh tools/leak_gate.sh
+2026-07-20T18:00:57Z  BROWSER  python3 tools/browser_qa.py
+2026-07-20T18:00:57Z  PRINT  python3 tools/render_note.py
+2026-07-20T18:00:57Z  REVIEW  fresh-context scientific/claim pass; SCI-01–04 resolved
+2026-07-20T18:00:57Z  REVIEW  fresh-context visual/narrative pass; VIS-01–03 fixed, VIS-04 explicitly accepted
+2026-07-20T18:00:57Z  FINALIZE  python3 tools/finalize_bundle.py

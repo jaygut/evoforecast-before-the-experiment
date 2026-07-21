@@ -1,0 +1,8 @@
+{
+  "exporter_sha256": "e34edc54fd556864b03dcf3573c59cc092b1d3ddd2fbd04da12db0ee3e18e2cb",
+  "network": "not used",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "python": "3.11.9",
+  "randomness": "none",
+  "schema_version": "evoforecast-scrolly-facts.local-v1"
+}

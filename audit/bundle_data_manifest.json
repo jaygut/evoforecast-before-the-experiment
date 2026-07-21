@@ -1,0 +1,23 @@
+{
+  "bundle_js_bytes": 175342,
+  "bundle_js_sha256": "27baed02cc598d3f5a6f8072adc1707a468d31531a641bd1856c264fde86252f",
+  "generator": "tools/build_data_bundle.py",
+  "keys": {
+    "facts": "facts_digest.json",
+    "genome": "genome_cutaway.json",
+    "phase": "phase_cells.json",
+    "portfolio": "portfolio.json",
+    "timeline": "challenge_timeline.json"
+  },
+  "network": "not used",
+  "randomness": "none",
+  "schema_version": "evoforecast-scrolly-bundle.local-v1",
+  "source_json_sha256": {
+    "challenge_timeline.json": "40280b842dee3dc0f2dc8bc1eb0a3d6a40971220b03cf6bffc84c2d2b22c5919",
+    "facts_digest.json": "c0566e3a983c5bae429c956d957648be106f534596d0037d84ec4a6e7e359f6d",
+    "genome_cutaway.json": "d99c2a821eddfaaaf2231339f8685e6e4f1552880e70b037a3e6ad2244a5999b",
+    "phase_cells.json": "c0e05e798eb33be5b3f081e4b7f172d03661030715926caa88f78bed46677a96",
+    "portfolio.json": "7c8b6e0527d91f0fd111f6b62e98ce1f66cfbeb9555a5e25d5509efe4656a0e3"
+  },
+  "window_var": "EVO_DATA"
+}
