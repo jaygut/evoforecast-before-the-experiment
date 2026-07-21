@@ -79,3 +79,34 @@ acceptance.
 - Owner credentials added to the page footer (always visible at the page end), with outbound mailto
   and site links; outbound navigation links are permitted by the leak gate while remote runtime
   resources remain banned.
+
+## Interactive redesign pass (owner-directed)
+
+Reviewer finding: the interactive layer was decorative and did not carry the value
+proposition. A specialist interaction-design workshop (instrument, pipeline, hero,
+narrative-critic) spec'd the rebuild. A pointer layer was added to the scene engine
+(hover and click, rAF-throttled, cleared on canvas-leave, disabled under reduced
+motion) and painters now receive a per-instance pointer state. Everything remains
+LOOKUP ONLY: pointers select and reveal frozen rows, the browser computes nothing.
+
+- **phase** rebuilt as a verdict bench. The configured design gets a PASS/FAIL stamp,
+  decomposed into three sub-test meters: accuracy gain with the interval that must
+  clear zero, calibration against the 85-95 percent band, and the combined gate against
+  the 50 and 80 percent marks. Below sits a gain-by-coverage plane with the acceptance
+  band shaded, a PASS REGION drawn and visibly EMPTY, all 80 frozen cells plotted, the
+  measurement ladder P1 to R1 traced at the selected design, and hover-to-inspect on any
+  cell. The default design reads +17.1 percent gain, interval still touching zero,
+  79.9 percent coverage (over-confident), combined gate 21.6 percent, verdict NOT READY.
+- **frontier** rebuilt as a cost-by-value plane with a robust/conditional/dominated
+  counter strip, a value-ceiling line labelled "no plan reaches higher", a break-even
+  line, six colour-keyed measurement families, selected-package emphasis, and hover
+  tooltips over the 120 frozen policies.
+- **windtunnel** rebuilt as an operable auditable chain. A coral blind boundary is drawn
+  between deposit and reveal, and hovering any of the nine stages discloses what that
+  stage RELEASES and what it keeps HIDDEN.
+- **blindspot** rebuilt as a three-gate funnel that visibly collapses from "+47.5%
+  CLEARS" through "80% of a 90% range FAILS" to "0/60 EMPTY", with hover disclosure.
+- **abstain** gains hover over the favorable and adverse arcs with a disclosure panel.
+- **hero** rebuilt as a living network. The mark is re-centred on its geometry centroid
+  and fitted to the free band, which fixes the clipped bottom node; nodes carry hit
+  halos, respond to the cursor, and disclose their role on hover.
